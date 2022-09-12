@@ -7,7 +7,7 @@ const dayblock = (props) => {
             for(let i = 1; i <= 8; i++){
                 for(let j of props.schedule){
                     if(parseInt(j.lesson_number) == i){
-                        day.push(<li>{i}. <b>{j.subject}</b><br/><span>{j.audience}</span></li>)
+                        day.push(<li>{i}. <b>{j.subject}</b><br/>{j.teacher}<span>{j.audience}</span></li>)
                     }
                 }
                 if(day[i-1] === undefined){
