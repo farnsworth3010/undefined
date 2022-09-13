@@ -1,4 +1,4 @@
-.dayblock{
+.alarmblock{
     width: 500px;
     border-radius: 15px;
     padding: 15px;
@@ -8,42 +8,27 @@
     box-sizing: border-box;
     color: #fff
 }
-
-.dayblock:last-child{
-    background: #533e3d;
-    margin-bottom: 15px;
-}
-
-.dayblock ul{
-    list-style: none;
-}
-
-.dayblock h1{
+.alarmblock h1{
     border-bottom: 1px solid #ccc;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
-
-.dayblock ul li{
+.alarmblock ul{
+    list-style: none
+}
+.alarmblock ul li{
     border-bottom: 1px solid #ccc;   
     margin: 15px 0px;
     padding-bottom: 15px;
 }
-.dayblock ul li span{
-    display: block;
-}
-
-.firstGroup{
-    border-bottom: none !important;
-}
-.dayblock ul li:last-child{
+.alarmblock ul li:last-child{
     border-bottom: none;   
     padding-bottom: 0px;
     margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px){
-    .dayblock{
+    .alarmblock{
         width: 90vw;
     }
 }

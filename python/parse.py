@@ -5,34 +5,38 @@ import mysql.connector
 import openpyxl
 import xlrd
 import pyexcel
-import pandas
 import subprocess
+import sys
+import urllib3
+
+urllib3.disable_warnings()
+
+savedlink = ""
 
 def downloadXls(url):
     r = requests.get(url, verify=False)
     open("table.xls", 'wb').write(r.content)
+    xlsToMysql()
 
-def getMergedCellVal(sheet, cell):
+def getMergedCellVal(sheet, cell): # Получить данные ячейки
     rng = [s for s in sheet.merged_cells.ranges if cell.coordinate in s]
     return sheet.cell(rng[0].min_row, rng[0].min_col).value if len(rng)!=0 else cell.value
 
-def testMysql():
-    connect = mysql.connector.connect(host="localhost", user="root", password="Rostik3015", database="stdtest")
+def xlsToMysql():
+    connect = mysql.connector.connect(host="localhost", user="root", password="Rostik3015", database="stdtest") #connect to db
     cursor = connect.cursor()
-    bashcmd = "libreoffice --convert-to xlsx table.xls --headless"
-    process = subprocess.Popen(bashcmd.split(), stdout=subprocess.PIPE)
+    bashcmd = "libreoffice --convert-to xlsx table.xls --headless" # конвертация xls в xlsx через libreoffice
+    process = subprocess.Popen(bashcmd.split(), stdout=subprocess.PIPE) 
     output, error = process.communicate()
 
-    wb = openpyxl.load_workbook("table.xlsx")
-    sheet = wb.active
-    # print(sheet[f'N16'].value)
-    cursor.execute("""TRUNCATE schedule""")
+    wb = openpyxl.load_workbook("table.xlsx") # открываем таблицу
+    sheet = wb.active # открываем лист
+    cursor.execute("""TRUNCATE schedule""") # стираем базу данных :)
 
-    startfrom = 0
+    startfrom = 0 # Стартовая строка
     def checkDay(start, dayname, day_number):
-        print("ДЕНЬ НАЧИНАЕТСЯ С"+str(start)+"СТРОКИ")
         startpos = start
-        print(dayname)
+
         for i in range(1, 8): 
             subjectName = ""
             teacherFirstGroup = ""
@@ -49,6 +53,7 @@ def testMysql():
                         continue
                     else:
                         subjectName = getMergedCellVal(sheet, sheet[f'N{j}'])
+                        continue
                         # print(subjectName)
                 elif(j==startpos+1):
                     # print("Преподаватель: ")
@@ -60,7 +65,6 @@ def testMysql():
                                 print()
                             else:
                                 teacherFirstGroup = getMergedCellVal(sheet, sheet[f'N{j}'])
-                                # print("First group: "+teacherFirstGroup)
                             if(getMergedCellVal(sheet, sheet[f'O{j}'])==None):
                                 print()
                             else:
@@ -100,7 +104,7 @@ def testMysql():
                 except mysql.connector.Error as err:
                     print("Something went wrong: {}".format(err))
 
-            elif(teacherOfBothGroups != "" or audienceOfBothGroups != ""):
+            elif(teacherOfBothGroups != "" or audienceOfBothGroups != "" or subjectName != ""):
                 try:
                     cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceOfBothGroups)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', NULL, '"""+teacherOfBothGroups+"""');""")
                     connect.commit()
@@ -129,14 +133,13 @@ def testMysql():
     #             else:
     #                 print(getMergedCellVal(sheet, sheet[f'N{i}']))
 
+
     for i in range(1,20):
         if(getMergedCellVal(sheet, sheet[f'N{i}']) == "14_1"):
             startfrom = i+1
             print(startfrom)
-            print("FOUND start")
+            print("start row found: "+str(startfrom))
             break
-
-    
     monday = startfrom
     tuesday = startfrom+27
     wednesday = tuesday+27
@@ -186,37 +189,44 @@ def testMysql():
 
 
     print("ASDASDASD")
-    
-# for i in range(2, 500002): #Читаем со 2-й строки (1-я заголовок)
-#     nm = sheet[f'A{i}'].value #id
-#     name = sheet[f'B{i}'].value #имя
-#     fam = sheet[f'C{i}'].value #фамилия
-#     otch = sheet[f'D{i}'].value #отчество
-#     vod_pr = sheet[f'E{i}'].value #Водительские права(Есть/Нет)
-#     sem_pol = sheet[f'F{i}'].value #Семейное положение(Да/Нет)
-#     prof = sheet[f'G{i}'].value #Профессия
 
 
 def downloadHtml():
-    # url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html"
-    # headers = {
-    #         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:45.0) Gecko/20100101 Firefox/45.0'
-    #     }
-    # r = requests.get(url, verify=False, headers=headers)
-    # data = r.text
-    # with open('test.html', 'w', encoding='utf-8') as output_file:
-    #     output_file.write(data)
-    # print("page downloaded...")
-    # soup = BeautifulSoup(data)
-    # table = soup.find('table', {'class': 'table-bordered'})
-    # link = "https://vsu.by"+table.find('a').get("href")
-    # print(link)
-    # downloadXls(link)
-    testMysql()
+    url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html";
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:45.0) Gecko/20100101 Firefox/45.0'
+    }
+    try:
+        r = requests.get(url, verify=False, headers=headers); # Получение страницы
+        data = r.text
+        open('schedule.html', 'w', encoding='utf-8').write(data) # Запись страницы в файл
+        print("page downloaded...")
+    except:
+        print("Download failed, check URL.") 
+        sys.exit()
+    print("looking for schedule...")
+    soup = BeautifulSoup(data, 'html.parser')
+    link = "https://vsu.by"+soup.find('table', {'class': 'table-bordered'}).find('a').get("href") # поиск ссылки на файл
+    try:
+        savedlink = open("savedlink.txt").read()
+        print("old link found...")
+        print("comparision started...")
+        if(savedlink == link):
+            print("schedule is up to date")
+            return None
+        else:
+            open("savedlink.txt", 'w').write(link)
+            print("starting update...")
+            downloadXls(link)
+    except:
+        open("savedlink.txt", 'w').write(link)
+        print("starting update...")
+        downloadXls(link)
+
+
 
 while(True):
-    print("downloading html page...");
-    downloadHtml();
-    
+    print("trying to download html page...")
+    downloadHtml()
     time.sleep(3600)
 

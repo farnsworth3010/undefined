@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import { api } from './api/api';
 import { initializeApp } from './redux/app-reducer';
 import { getSchedule } from './redux/schedule-reducer';
+import Alarms from './components/schedule/alarms/alarms';
 
 class App extends React.Component{
   constructor(props){
@@ -17,6 +18,7 @@ class App extends React.Component{
   render(){
 		return (
 			<div className="app-wrapper">
+        <Alarms/>
         <ScheduleContainer/>
 			</div>
 		);
