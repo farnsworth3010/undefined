@@ -7,6 +7,8 @@ import { api } from './api/api';
 import { initializeApp } from './redux/app-reducer';
 import { getSchedule } from './redux/schedule-reducer';
 import Alarms from './components/schedule/alarms/alarms';
+import Preloader from './components/preloader/preloader';
+
 
 class App extends React.Component{
   constructor(props){
@@ -14,12 +16,17 @@ class App extends React.Component{
   }
   componentDidMount(){
     this.props.initializeApp();
+    this.props.getSchedule(6);
   }
   render(){
+    
 		return (
 			<div className="app-wrapper">
-        <Alarms/>
+        {this.props.scheduleLoaded ? <>
+          <Alarms/>
         <ScheduleContainer/>
+        </> : <Preloader/>}
+
 			</div>
 		);
 	}
@@ -27,6 +34,7 @@ class App extends React.Component{
 
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
+  scheduleLoaded: state.schedule.scheduleLoaded
 })
 
-export default connect(mapStateToProps, {initializeApp})(App);
+export default connect(mapStateToProps, {initializeApp, getSchedule})(App);

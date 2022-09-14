@@ -8,7 +8,6 @@ class ScheduleContainer extends React.Component {
 		super(props);
 	}
 	componentDidMount() {
-		this.props.getSchedule();
 
 	}
 	render() {

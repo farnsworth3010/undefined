@@ -9,11 +9,13 @@ require 'functions.php';
 
 
 $url = $_SERVER['REQUEST_URI'];
+$url_components = parse_url($url);
 
-if($url === '/test/index.php/schedule'){
-    getDays($connect);
+parse_str($url_components['query'], $params);
+
+if(isset($params['group_id'])){
+    getSchedule($params['group_id'], $connect);
 }
-
 
 
 

@@ -4,7 +4,8 @@ const GET_SCHEDULE = "GET_SCHEDULE";
 const SET_SCHEDULE = "SET_SCHEDULE";
 
 const initialState = {
-    schedule: []
+    schedule: [],
+    scheduleLoaded: false
 }
 
 const scheduleReducer = (state=initialState, action) => {
@@ -18,6 +19,7 @@ const scheduleReducer = (state=initialState, action) => {
             return{
                 ...state,
                 schedule: schedule,
+                scheduleLoaded: true
             }
         default: 
             return state;
@@ -25,9 +27,11 @@ const scheduleReducer = (state=initialState, action) => {
 }
 const setSchedule = (data)=> ({type: SET_SCHEDULE, data: data})
 
-export const getSchedule = () => async (dispatch) => {
-    let response = await api.schedule.getSchedule();
-    dispatch(setSchedule(response));
+export const getSchedule = (group_id) => async (dispatch) => {
+    let response = await api.schedule.getSchedule(group_id);
+    setTimeout(()=>{
+        dispatch(setSchedule(response));
+    }, 1000)
 }
 
 export default scheduleReducer;

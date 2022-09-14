@@ -6,8 +6,8 @@ const instance = axios.create({
 
 export const api = {
     schedule: {
-        getSchedule(){
-            return instance.get('schedule').then(response => response.data)
+        getSchedule(group_id){
+            return instance.get('?group_id='+group_id).then(response => response.data)
         }
     }
 }

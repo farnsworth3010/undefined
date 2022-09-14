@@ -34,7 +34,7 @@ def xlsToMysql():
     cursor.execute("""TRUNCATE schedule""") # стираем базу данных :)
 
     startfrom = 0 # Стартовая строка
-    def checkDay(start, dayname, day_number):
+    def checkDay(start, dayname, day_number, group_id, group_name, firstLetter, secondLetter):
         startpos = start
 
         for i in range(1, 8): 
@@ -47,58 +47,57 @@ def xlsToMysql():
             audienceOfBothGroups = ""
             # print(str(i)+" Пара")
             for j in range(startpos, startpos+3):
-                if(j==startpos):
-                    # print("Название предмета: ")
-                    if(getMergedCellVal(sheet, sheet[f'N{j}']) == None):
+                if(j==startpos): # Название предмета (1 строка)
+                    if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}']) == None):
                         continue
                     else:
-                        subjectName = getMergedCellVal(sheet, sheet[f'N{j}'])
+                        subjectName = getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])
                         continue
                         # print(subjectName)
                 elif(j==startpos+1):
                     # print("Преподаватель: ")
-                    if(getMergedCellVal(sheet, sheet[f'N{j}']) == None):
+                    if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}']) == None):
                         continue
                     else:
-                        if(getMergedCellVal(sheet, sheet[f'N{j}'])!=getMergedCellVal(sheet, sheet[f'O{j}'])):
-                            if(getMergedCellVal(sheet, sheet[f'N{j}'])==None):
+                        if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])!=getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])):
+                            if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])==None):
                                 print()
                             else:
-                                teacherFirstGroup = getMergedCellVal(sheet, sheet[f'N{j}'])
-                            if(getMergedCellVal(sheet, sheet[f'O{j}'])==None):
+                                teacherFirstGroup = getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])
+                            if(getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])==None):
                                 print()
                             else:
-                                teacherSecondGroup = getMergedCellVal(sheet, sheet[f'O{j}'])
-                                # print("Second group: "+teacherSecondGroup)
+                                teacherSecondGroup = getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])
                         else:
-                            teacherOfBothGroups = getMergedCellVal(sheet, sheet[f'N{j}'])
+                            teacherOfBothGroups = getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])
                             # print("препод двух групп: "+teacherOfBothGroups)
                 elif(j==startpos+2):
                     # print("Аудитория:")
-                    if(getMergedCellVal(sheet, sheet[f'N{j}']) == None):
+                    if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}']) == None):
                         continue
                     else:
-                        if(getMergedCellVal(sheet, sheet[f'N{j}'])!=getMergedCellVal(sheet, sheet[f'O{j}'])):
-                            if(getMergedCellVal(sheet, sheet[f'N{j}'])==None):
+                        if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])!=getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])):
+                            if(getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])==None):
                                 print()
                             else:
-                                audienceFirstGroup = getMergedCellVal(sheet, sheet[f'N{j}'])
+                                audienceFirstGroup = getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])
                                 # print("ауд 1 группы: "+audienceFirstGroup)
 
-                            if(getMergedCellVal(sheet, sheet[f'O{j}'])==None):
+                            if(getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])==None):
                                 print()
                             else:
-                                audienceSecondGroup = getMergedCellVal(sheet, sheet[f'O{j}'])
+                                audienceSecondGroup = getMergedCellVal(sheet, sheet[f'{secondLetter}{j}'])
                                 # print("ауд 2 гр: "+audienceSecondGroup)
                         else:
-                            audienceOfBothGroups = getMergedCellVal(sheet, sheet[f'N{j}'])
+                            audienceOfBothGroups = getMergedCellVal(sheet, sheet[f'{firstLetter}{j}'])
                             # print("аудитория двух групп: "+audienceOfBothGroups)
             if(teacherFirstGroup != "" or teacherSecondGroup != "" or audienceFirstGroup != "" or audienceSecondGroup != ""):
+                print("gg: "+teacherFirstGroup+" "+teacherSecondGroup+" "+audienceFirstGroup+" "+audienceSecondGroup)
                 try:
-                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""');""")
-                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""');""")
-                    print("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""');""")
-                    print("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""');""")
+                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""', '"""+group_name+"""');""")
+                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""', '"""+group_name+"""');""")
+                    print("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""', '"""+group_name+"""');""")
+                    print("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""', '"""+group_name+"""');""")
                     connect.commit()
 
                 except mysql.connector.Error as err:
@@ -106,7 +105,8 @@ def xlsToMysql():
 
             elif(teacherOfBothGroups != "" or audienceOfBothGroups != "" or subjectName != ""):
                 try:
-                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceOfBothGroups)+"""', '1', '"""+str(day_number)+"""', '"""+subjectName+"""', NULL, '"""+teacherOfBothGroups+"""');""")
+                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceOfBothGroups)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', NULL, '"""+teacherOfBothGroups+"""', '"""+group_name+"""');""")
+                    print("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceOfBothGroups)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', NULL, '"""+teacherOfBothGroups+"""', '"""+group_name+"""'""")
                     connect.commit()
                 except mysql.connector.Error as err:
                     print("Something went wrong: {}".format(err))
@@ -115,24 +115,6 @@ def xlsToMysql():
                 
             startpos = startpos+3
         print("\n")
-    # def checkDay(start):
-    #     for i in range(start, start+23):
-    #         if(getMergedCellVal(sheet, sheet[f'N{i}']) == None):
-    #             continue
-    #         else:
-    #             if(getMergedCellVal(sheet, sheet[f'N{i}'])!=getMergedCellVal(sheet, sheet[f'O{i}'])):
-    #                 if(getMergedCellVal(sheet, sheet[f'N{i}'])==None):
-    #                     print()
-    #                 else:
-    #                     print("First group: "+getMergedCellVal(sheet, sheet[f'N{i}']))
-
-    #                 if(getMergedCellVal(sheet, sheet[f'O{i}'])==None):
-    #                     print()
-    #                 else:
-    #                     print("Second group: "+getMergedCellVal(sheet, sheet[f'O{i}']))
-    #             else:
-    #                 print(getMergedCellVal(sheet, sheet[f'N{i}']))
-
 
     for i in range(1,20):
         if(getMergedCellVal(sheet, sheet[f'N{i}']) == "14_1"):
@@ -147,49 +129,17 @@ def xlsToMysql():
     friday = thursday+27
     saturday = friday+27
     sunday = saturday+27
-    checkDay(monday, "Понедельник", "1")
-    checkDay(tuesday, "Вторник", "2")
-    checkDay(wednesday, "Среда", "3")
-    checkDay(thursday, "Четверг", "4")
-    checkDay(friday, "Пятница", "5")
-    checkDay(saturday, "Суббота", "6")
-    checkDay(sunday, "Воскресенье", "7")
-
-    # checkDay(tuesday)
-    # checkDay(wednesday)
-    # checkDay(thursday)
-    # checkDay(friday)
-    # checkDay(saturday)
-    # checkDay(sunday)
-
-
-    # for i in range(startfrom, 180):
-    #     monday = startfrom
-    #     tuesday = startfrom+23
-    #     wednesday = tuesday+23
-    #     thursday = wednesday+23
-    #     friday = thursday+23
-    #     saturday = friday+23
-    #     sunday = saturday+23
-    #     if(getMergedCellVal(sheet, sheet[f'N{i}']) == None):
-    #         continue
-    #     else:
-    #         if(getMergedCellVal(sheet, sheet[f'N{i}'])!=getMergedCellVal(sheet, sheet[f'O{i}'])):
-    #             if(getMergedCellVal(sheet, sheet[f'N{i}'])==None):
-    #                 print()
-    #             else:
-    #                 print("First group: "+getMergedCellVal(sheet, sheet[f'N{i}']))
-
-    #             if(getMergedCellVal(sheet, sheet[f'O{i}'])==None):
-    #                 print()
-    #             else:
-    #                 print("Second group: "+getMergedCellVal(sheet, sheet[f'O{i}']))
-    #         else:
-    #             print(getMergedCellVal(sheet, sheet[f'N{i}']))
-
-
-    print("ASDASDASD")
-
+    groups = ["22ИСИТ1д", "22МИ1д", "22ПИ_ВЕБ1д", "22ПИ_ПОКС1д", "22ПМ1д", "22ПОИТ1д", "22УИР1д", "22ФИЗ1д"]
+    firstLetters = ["D", "F", "H", "J", "L", "N", "P", "R"]
+    secondLetters = [ "E", "G", "I", "K", "M", "O", "Q", "S"]
+    for i in range(0, 7):
+        checkDay(monday, "Понедельник", "1", i,groups[i], firstLetters[i], secondLetters[i])
+        checkDay(tuesday, "Вторник", "2", i,groups[i],  firstLetters[i], secondLetters[i])
+        checkDay(wednesday, "Среда", "3", i, groups[i], firstLetters[i], secondLetters[i])
+        checkDay(thursday, "Четверг", "4", i,groups[i],  firstLetters[i], secondLetters[i])
+        checkDay(friday, "Пятница", "5", i, groups[i], firstLetters[i], secondLetters[i])
+        checkDay(saturday, "Суббота", "6", i,groups[i],  firstLetters[i], secondLetters[i])
+        # checkDay(sunday, "Воскресенье", "7", i, groups[i], firstLetters[i], secondLetters[i])
 
 def downloadHtml():
     url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html";
@@ -215,11 +165,11 @@ def downloadHtml():
             print("schedule is up to date")
             return None
         else:
-            open("savedlink.txt", 'w').write(link)
+            # open("savedlink.txt", 'w').write(link)
             print("starting update...")
             downloadXls(link)
     except:
-        open("savedlink.txt", 'w').write(link)
+        # open("savedlink.txt", 'w').write(link)
         print("starting update...")
         downloadXls(link)
 
