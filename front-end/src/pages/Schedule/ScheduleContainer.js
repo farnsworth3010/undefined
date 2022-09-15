@@ -1,20 +1,33 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from "react"
+import Dayblock from "../../components/dayblock/dayblock"
 import { getSchedule } from "../../redux/schedule-reducer";
-import Dayblock from "./dayblock/dayblock";
+import { connect } from "react-redux";
+import withRouter from '../../components/withRouter/withRouter'
+import Alarms from '../../components/alarms/alarms'
+import Preloader from '../../components/preloader/preloader'
+import { Link } from "react-router-dom";
+import {resetGroup} from '../../redux/schedule-reducer'
+class ScheduleContainer extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    componentDidMount(){
+        if(this.props.group_id){
+            this.props.getSchedule(this.props.group_id)
+        }
+        else{
+            this.props.getSchedule(this.props.params.groupId)
+        }
+    }
+    componentWillUnmount(){
 
-class ScheduleContainer extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-	componentDidMount() {
-
-	}
-	render() {
-		return (
-			<div>
-				{
-					<>
+    }
+    render(){
+        return(
+<div>
+            <Link to={'/'} onClick={()=>{this.props.resetGroup()}}>На главную</Link>
+            <Alarms/>
+            {this.props.isFetching ? <Preloader/> : <>
 						<Dayblock
                         day_name="Понедельник"
 							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
@@ -65,16 +78,15 @@ class ScheduleContainer extends React.Component {
                             }) : null}
 						></Dayblock>
     
-					</>
-                    
-				}
+					</>}
 			</div>
-		);
-	}
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({
 	schedule: state.schedule.schedule,
+    group_id: state.schedule.group_id,
+    isFetching: state.schedule.isFetching
 });
-
-export default connect(mapStateToProps, { getSchedule })(ScheduleContainer);
+export default withRouter(connect(mapStateToProps, { getSchedule, resetGroup })(ScheduleContainer));

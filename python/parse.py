@@ -3,12 +3,9 @@ import time
 from bs4 import BeautifulSoup
 import mysql.connector
 import openpyxl
-import xlrd
-import pyexcel
 import subprocess
 import sys
 import urllib3
-
 urllib3.disable_warnings()
 
 savedlink = ""
@@ -142,12 +139,12 @@ def xlsToMysql():
         # checkDay(sunday, "Воскресенье", "7", i, groups[i], firstLetters[i], secondLetters[i])
 
 def downloadHtml():
-    url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html";
+    url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:45.0) Gecko/20100101 Firefox/45.0'
     }
     try:
-        r = requests.get(url, verify=False, headers=headers); # Получение страницы
+        r = requests.get(url, verify=False, headers=headers) # Получение страницы
         data = r.text
         open('schedule.html', 'w', encoding='utf-8').write(data) # Запись страницы в файл
         print("page downloaded...")

@@ -23,7 +23,6 @@ const dayblock = (props) => {
                     }
                 }
                 if(day[i-1] === undefined){
-                    console.log(day)
                     day.push(<li>{i}.</li>)
                 }
               }
