@@ -14,15 +14,15 @@ if(localStorage.getItem("group_id")){
 else{
     group_id = undefined
 }
+let group_names = ["22ИСИТ1д", "22МИ1д", "22ПИ_ВЕБ1д", "22ПИ_ПОКС1д", "22ПМ1д", "22ПОИТ1д", "22УИР1д", "22ФИЗ1д"];
 
 const initialState = {
     schedule: [],
     scheduleLoaded: false,
     group_id: group_id,
-    isFetching: true
+    isFetching: true,
+    group_name: group_names[group_id]
 }
-
-
 
 const scheduleReducer = (state=initialState, action) => {
     switch(action.type){
@@ -43,24 +43,26 @@ const scheduleReducer = (state=initialState, action) => {
                 ...state,
                 schedule: schedule,
                 scheduleLoaded: true,
-                isFetching: false
+                isFetching: false,
+                group_name: group_names[action.group_id]
             }
         case SET_GROUP:
             return{
                 ...state,
-                group_id: action.group_id
+                group_id: action.group_id,
+                group_name: group_names[action.group_id]
             }
         default: 
             return state;
     }
 }
-const setSchedule = (data)=> ({type: SET_SCHEDULE, data: data})
+const setSchedule = (data, group_id)=> ({type: SET_SCHEDULE, data: data, group_id: group_id})
 
 export const getSchedule = (group_id) => async (dispatch) => {
     dispatch(isFetching(true))
     let response = await api.schedule.getSchedule(group_id);
     setTimeout(()=>{
-        dispatch(setSchedule(response));
+        dispatch(setSchedule(response, group_id));
         dispatch(isFetching(false))
     }, 1000)
 }

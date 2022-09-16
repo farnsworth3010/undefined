@@ -3,8 +3,11 @@
   padding: 0;
 }
 body{
-  padding-top: 15px;
-
+  background-color: #eaeaea;
+  height: 100%;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 93vh
 }
 
 .App {
@@ -44,4 +47,46 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-wrapper{
+  padding: 15px 15vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto
+}
+
+@media screen and (max-width: 768px){
+  .app-wrapper{
+    padding: 15px 5vw;
+  }
+}
+
+.project-name{
+  margin: 0 auto;
+  margin-bottom: 15px;
+  text-align: center;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  background-image: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  user-select: none;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.group_name{
+  text-align: center;
+}
+
+.today-block{
+  margin-bottom: 15px;
 }

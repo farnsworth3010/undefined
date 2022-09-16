@@ -7,8 +7,9 @@
     margin-top: 15px;
     margin-bottom: 15px;
     box-sizing: border-box;
+    background-color: #fff;
 }
-.alarmblock h1{
+.alarmblock h2{
     border-bottom: 1px solid #ccc;
     padding-bottom: 15px;
     margin-bottom: 15px;
@@ -29,6 +30,6 @@
 
 @media screen and (max-width: 768px){
     .alarmblock{
-        width: 90vw;
+        width: 100%;
     }
 }

@@ -7,6 +7,7 @@ import Alarms from '../../components/alarms/alarms'
 import Preloader from '../../components/preloader/preloader'
 import { Link } from "react-router-dom";
 import {resetGroup} from '../../redux/schedule-reducer'
+import DateComponent from "../../components/date/DateComponent";
 class ScheduleContainer extends React.Component{
     constructor(props){
         super(props)
@@ -23,11 +24,27 @@ class ScheduleContainer extends React.Component{
 
     }
     render(){
+        let date = new Date()
+        let day_number = date.getDay()
+        let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
         return(
 <div>
-            <Link to={'/'} onClick={()=>{this.props.resetGroup()}}>На главную</Link>
+            <DateComponent/>
+            <div className="group_name">{this.props.group_name}</div>
             <Alarms/>
-            {this.props.isFetching ? <Preloader/> : <>
+            {this.props.isFetching ? <Preloader lines="5"/> : <>
+                        <div className="today-block">
+                        <h1>Расписание на сегодня:</h1>
+                        <Dayblock
+                        day_name={days[day_number-1]}
+							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
+                                return lesson
+							}).filter((lesson)=>{
+                                return parseInt(lesson.day_number) == day_number
+                            }) : null}
+						></Dayblock>
+                        </div>
+                        <h1>Расписание на неделю:</h1>
 						<Dayblock
                         day_name="Понедельник"
 							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
@@ -70,14 +87,15 @@ class ScheduleContainer extends React.Component{
                                 return parseInt(lesson.day_number) ==6
                             }) : null}
 						></Dayblock>
-                        					<Dayblock day_name="Воскресенье"
+                        					<Dayblock day_name="Воскресенье" weekend={true}
 							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
                                 return lesson
 							}).filter((lesson)=>{
                                 return parseInt(lesson.day_number) == 7
                             }) : null}
 						></Dayblock>
-    
+                <Link to={'/'} onClick={()=>{this.props.resetGroup()}}>На главную</Link>
+
 					</>}
 			</div>
         )
@@ -87,6 +105,7 @@ class ScheduleContainer extends React.Component{
 const mapStateToProps = (state) => ({
 	schedule: state.schedule.schedule,
     group_id: state.schedule.group_id,
-    isFetching: state.schedule.isFetching
+    isFetching: state.schedule.isFetching,
+    group_name: state.schedule.group_name
 });
 export default withRouter(connect(mapStateToProps, { getSchedule, resetGroup })(ScheduleContainer));

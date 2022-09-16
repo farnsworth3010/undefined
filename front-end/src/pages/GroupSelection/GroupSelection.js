@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './groupselection.module.css';
+import s from './groupselection.module.css';
 import { Link, Navigate } from 'react-router-dom';
 import { selectGroup } from '../../redux/schedule-reducer';
 class GroupSelection extends React.Component{
@@ -16,14 +16,14 @@ class GroupSelection extends React.Component{
     }
 		return (
 			<div className="app-wrapper">
-        <Link to={'/schedule/0'} onClick={()=>{this.props.selectGroup(0)}}>22ИСИТ1д</Link>
-        <Link to={'/schedule/1'} onClick={()=>{this.props.selectGroup(1)}}>22МИ1д</Link>
-        <Link to={'/schedule/2'} onClick={()=>{this.props.selectGroup(2)}}>22ПИ_ВЕБ1д</Link>
-        <Link to={'/schedule/3'} onClick={()=>{this.props.selectGroup(3)}}>22ПИ_ПОКС1д</Link>
-        <Link to={'/schedule/4'} onClick={()=>{this.props.selectGroup(4)}}>22ПМ1д</Link>
-        <Link to={'/schedule/5'} onClick={()=>{this.props.selectGroup(5)}}>22ПОИТ1д</Link>
-        <Link to={'/schedule/6'} onClick={()=>{this.props.selectGroup(6)}}>22УИР1д</Link>
-        <Link to={'/schedule/7'} onClick={()=>{this.props.selectGroup(7)}}>22ФИЗ1д</Link>
+        <Link sto={'/schedule/0'} onClick={()=>{this.props.selectGroup(0)}}><div className={s.button}>22ИСИТ1д</div></Link>
+        <Link to={'/schedule/1'} onClick={()=>{this.props.selectGroup(1)}}><div className={s.button}>22МИ1д</div></Link>
+        <Link to={'/schedule/2'} onClick={()=>{this.props.selectGroup(2)}}><div className={s.button}>22ПИ_ВЕБ1д</div></Link>
+        <Link to={'/schedule/3'} onClick={()=>{this.props.selectGroup(3)}}><div className={s.button}>22ПИ_ПОКС1д</div></Link>
+        <Link to={'/schedule/4'} onClick={()=>{this.props.selectGroup(4)}}><div className={s.button}>22ПМ1д</div></Link>
+        <Link to={'/schedule/5'} onClick={()=>{this.props.selectGroup(5)}}><div className={s.button}>22ПОИТ1д</div></Link>
+        <Link to={'/schedule/6'} onClick={()=>{this.props.selectGroup(6)}}><div className={s.button}>22УИР1д</div></Link>
+        <Link to={'/schedule/7'} onClick={()=>{this.props.selectGroup(7)}}><div className={s.button}>22ФИЗ1д</div></Link>
 
 			</div>
 		);

@@ -29,10 +29,9 @@ const dayblock = (props) => {
     }
 
     return(
-        <div className={ `${s.dayblock}`}>
-            <h1>{props.day_name}</h1>
+        <div className={ `${s.dayblock} ${props.weekend ? s.weekend : null}` }>
+            <h2>{props.day_name}</h2>
             <ul>
-                
                 {day}
             </ul>
         </div>

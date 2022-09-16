@@ -1,0 +1,19 @@
+.button{
+    user-select: none;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background-color: #2710d1;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+    background: #ff9966;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.button a{
+    color: #fff
+}
