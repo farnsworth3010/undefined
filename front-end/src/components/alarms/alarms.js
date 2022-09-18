@@ -2,8 +2,10 @@ import s from './alarms.module.css'
 
 const alarms = (props) => {
     return(
+        <div>
+        <h1>Звонки</h1>
         <div className={ `${s.alarmblock}`}>
-            <h2>Звонки</h2>
+
             <ul>
                 <li>
                     1. 8:00 - 9:25
@@ -22,6 +24,7 @@ const alarms = (props) => {
                 </li>
                 <li>6. 16:15 - 17:40</li>
             </ul>
+        </div>
         </div>
     )
 }

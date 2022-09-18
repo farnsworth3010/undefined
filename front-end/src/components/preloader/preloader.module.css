@@ -1,17 +1,18 @@
 .preloader{
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
 }
 
 @media screen and(max-width: 768px){
     .preloader{
-        width: 90vw
+        width: 100%
     }
 }
 
 .line{
+    margin-top: 15px;
     margin-bottom: 15px;
-    background: linear-gradient(to left, #eeeeee, rgb(235, 235, 235));
+    background: linear-gradient(to left, #eaeaee, #d9d9db);
     padding: 15px;
     box-sizing: border-box;
     border-radius: 15px;

@@ -5,13 +5,10 @@ import { connect } from "react-redux";
 import withRouter from '../../components/withRouter/withRouter'
 import Alarms from '../../components/alarms/alarms'
 import Preloader from '../../components/preloader/preloader'
-import { Link } from "react-router-dom";
 import {resetGroup} from '../../redux/schedule-reducer'
 import DateComponent from "../../components/date/DateComponent";
+import s from "./scheduleContainer.module.css"
 class ScheduleContainer extends React.Component{
-    constructor(props){
-        super(props)
-    }
     componentDidMount(){
         if(this.props.group_id){
             this.props.getSchedule(this.props.group_id)
@@ -27,76 +24,57 @@ class ScheduleContainer extends React.Component{
         let date = new Date()
         let day_number = date.getDay()
         let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
-        return(
-<div>
-            <DateComponent/>
-            <div className="group_name">{this.props.group_name}</div>
-            <Alarms/>
-            {this.props.isFetching ? <Preloader lines="5"/> : <>
-                        <div className="today-block">
-                        <h1>Расписание на сегодня:</h1>
-                        <Dayblock
-                        day_name={days[day_number-1]}
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == day_number
-                            }) : null}
-						></Dayblock>
-                        </div>
-                        <h1>Расписание на неделю:</h1>
-						<Dayblock
-                        day_name="Понедельник"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 1
-                            }) : null}
-						></Dayblock>
-					<Dayblock day_name="Вторник"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 2
-                            }) : null}
-						></Dayblock>
-                    					<Dayblock day_name="Среда"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 3
-                            }) : null}
-						></Dayblock>
-                        					<Dayblock day_name="Четверг"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 4
-                            }) : null}
-						></Dayblock>
-                        					<Dayblock day_name="Пятница"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 5
-                            }) : null}
-						></Dayblock>
-                        					<Dayblock day_name="Суббота"
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => (lesson)
-							).filter((lesson)=>{
-                                return parseInt(lesson.day_number) ==6
-                            }) : null}
-						></Dayblock>
-                        					<Dayblock day_name="Воскресенье" weekend={true}
-							schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
-                                return lesson
-							}).filter((lesson)=>{
-                                return parseInt(lesson.day_number) == 7
-                            }) : null}
-						></Dayblock>
-                <Link to={'/'} onClick={()=>{this.props.resetGroup()}}>На главную</Link>
+        let schedule = []
+        let today_block; 
+        if(this.props.schedule){
+            today_block = <Dayblock
+            day_name={days[day_number-1]}
+                schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
+                    return lesson
+                }).filter((lesson)=>{
+                    return parseInt(lesson.day_number) === day_number
+                }) : null}
+            ></Dayblock>
+            for(let i = 0; i < 7; i++){
+                if(i === 6){
+                    schedule.push(<Dayblock weekend="true" key={i} day_name={days[i]} 
+                        schedule={this.props.schedule.map((lesson) => {return lesson}).filter((lesson)=>{return parseInt(lesson.day_number) === i+1})}/>)
+                }
+                else{
+                    
+                schedule.push(<Dayblock key={i} day_name={days[i]}
+                    schedule={this.props.schedule.map((lesson) => {return lesson}).filter((lesson)=>{return parseInt(lesson.day_number) === i+1})}/>)
+                }
 
-					</>}
+            }
+        }
+
+        return(
+            <div>
+                 <div className={s.animationContainer}>
+                <DateComponent/>
+
+                <div className="group_name">{this.props.group_name}</div>
+                </div>
+                {this.props.isFetching ? <Preloader lines="5"/> : <>
+                <div className={s.animationContainer}>
+                    <div className={s.alarmAndTodayContainer}>
+                        <Alarms/>
+                        <div>
+                            <h1>Расписание на сегодня:</h1>
+                            {today_block}
+                        </div>
+                    </div>
+                </div>
+                <div className={s.animationContainer}>
+                <h1>Расписание на неделю:</h1>
+                <div className={s.scheduleContainer}>
+                {schedule}
+                </div>
+                </div>
+                {/* <Link to={'/undefined'} style={{color: "#000"}} onClick={()=>{this.props.resetGroup()}}>На главную</Link> */}
+
+                </>}
 			</div>
         )
     }

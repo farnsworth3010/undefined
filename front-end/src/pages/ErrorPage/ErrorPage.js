@@ -1,4 +1,5 @@
-const ErrorPage = ()=> {
+const ErrorPage = (props)=> {
+    console.log(props)
     return(
         <>error</>
     )

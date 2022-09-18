@@ -2,7 +2,7 @@ import s from './Footer.module.css'
 
 const Footer = ()=>{
     return(
-        <div className={s.footer}>Danchenko 2022</div>
+        <div className={s.footer}>farnsworth3010 2022</div>
     )
 }
 

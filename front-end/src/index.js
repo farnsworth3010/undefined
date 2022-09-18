@@ -5,23 +5,23 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store'
-import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import ScheduleContainer from './pages/Schedule/ScheduleContainer';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import GroupSelection from './pages/GroupSelection/GroupSelection';
 
 const router = createBrowserRouter([
   {
-  path: "/",
+  path: "/undefined",
   element: <App/>,
   errorElement: <ErrorPage/>,
   children: [
     {
-      path: "schedule/:groupId",
+      path: "/undefined/schedule/:groupId",
       element: <ScheduleContainer/>
     },
     {
-      path: "/",
+      path: "/undefined",
       element: <GroupSelection/>
     },
   ]
