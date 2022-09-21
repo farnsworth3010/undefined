@@ -22,11 +22,11 @@ def getMergedCellVal(sheet, cell): # Получить данные ячейки
 def xlsToMysql():
     connect = mysql.connector.connect(host="localhost", user="root", password="Rostik3015", database="stdtest") #connect to db
     cursor = connect.cursor()
-    bashcmd = "libreoffice --convert-to xlsx table.xls --headless" # конвертация xls в xlsx через libreoffice
+    bashcmd = "libreoffice --convert-to xlsx new.xls --headless" # конвертация xls в xlsx через libreoffice
     process = subprocess.Popen(bashcmd.split(), stdout=subprocess.PIPE) 
     output, error = process.communicate()
 
-    wb = openpyxl.load_workbook("table.xlsx") # открываем таблицу
+    wb = openpyxl.load_workbook("new.xlsx") # открываем таблицу
     sheet = wb.active # открываем лист
     cursor.execute("""TRUNCATE schedule""") # стираем базу данных :)
 

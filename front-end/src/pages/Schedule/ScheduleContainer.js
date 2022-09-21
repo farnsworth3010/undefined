@@ -26,14 +26,24 @@ class ScheduleContainer extends React.Component{
         let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
         let schedule = []
         let today_block; 
+        let tomorrow_block;
+        let tomorrow_day_number = day_number >5 ? 0 : day_number+1;
         if(this.props.schedule){
+            tomorrow_block = <Dayblock
+            day_name={days[tomorrow_day_number]}
+                schedule={this.props.schedule.map((lesson) => {
+                    return lesson
+                }).filter((lesson)=>{
+                    return parseInt(lesson.day_number) === tomorrow_day_number
+                })}
+            ></Dayblock>
             today_block = <Dayblock
             day_name={days[day_number-1]}
-                schedule={this.props.schedule ? this.props.schedule.map((lesson) => {
+                schedule={this.props.schedule.map((lesson) => {
                     return lesson
                 }).filter((lesson)=>{
                     return parseInt(lesson.day_number) === day_number
-                }) : null}
+                })}
             ></Dayblock>
             for(let i = 0; i < 7; i++){
                 if(i === 6){
@@ -61,8 +71,12 @@ class ScheduleContainer extends React.Component{
                     <div className={s.alarmAndTodayContainer}>
                         <Alarms/>
                         <div>
-                            <h1>Расписание на сегодня:</h1>
-                            {today_block}
+                            {(date.getHours() > 17 || date.getHours() < 5) ? <><h1>Расписание на завтра:</h1> 
+                            {tomorrow_block}</>
+                            : <> <h1>Расписание на сегодня:</h1>
+                            {today_block}</>
+                            }
+                            
                         </div>
                     </div>
                 </div>
@@ -72,8 +86,6 @@ class ScheduleContainer extends React.Component{
                 {schedule}
                 </div>
                 </div>
-                {/* <Link to={'/undefined'} style={{color: "#000"}} onClick={()=>{this.props.resetGroup()}}>На главную</Link> */}
-
                 </>}
 			</div>
         )
