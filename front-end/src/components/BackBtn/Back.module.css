@@ -1,0 +1,7 @@
+.btn{
+    
+}
+
+body[class~="dark"] .btn{
+    filter: invert(1);
+}

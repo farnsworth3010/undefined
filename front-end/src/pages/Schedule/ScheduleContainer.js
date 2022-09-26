@@ -27,10 +27,10 @@ class ScheduleContainer extends React.Component{
         let schedule = []
         let today_block; 
         let tomorrow_block;
-        let tomorrow_day_number = day_number >5 ? 0 : day_number+1;
+        let tomorrow_day_number = day_number > 6 ? 0 : day_number+1;
         if(this.props.schedule){
             tomorrow_block = <Dayblock
-            day_name={days[tomorrow_day_number]}
+            day_name={days[tomorrow_day_number-1]}
                 schedule={this.props.schedule.map((lesson) => {
                     return lesson
                 }).filter((lesson)=>{
