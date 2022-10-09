@@ -67,7 +67,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "1",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "0",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
@@ -78,29 +78,29 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "2",
                     "lesson_number": "2",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 526",
                     "group_id": "0",
                     "day_number": "1",
                     "subject": "Линейная алгебра и аналитическая геометрия (лк)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22ИСИТ1д"
                 },
                 {
                     "id": "3",
                     "lesson_number": "3",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 526",
                     "group_id": "0",
                     "day_number": "1",
                     "subject": "Линейная алгебра и аналитическая геометрия (пз)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22ИСИТ1д"
                 },
                 {
                     "id": "4",
                     "lesson_number": "4",
-                    "audience": "ауд. 119",
+                    "audience": "ауд. 141",
                     "group_id": "0",
                     "day_number": "1",
                     "subject": "Основы компьютерной графики (лк)",
@@ -149,24 +149,24 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "day_number": "2",
                     "subject": "Основы алгоритмизации и программирования (лаб)",
                     "subgroup_id": "1",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22ИСИТ1д"
                 },
                 {
                     "id": "9",
                     "lesson_number": "4",
-                    "audience": "ауд. 308",
+                    "audience": "ауд. 219",
                     "group_id": "0",
                     "day_number": "2",
                     "subject": "Основы алгоритмизации и программирования (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Иванова Л.В. (пр.)",
                     "group_name": "22ИСИТ1д"
                 },
                 {
                     "id": "10",
                     "lesson_number": "2",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 313",
                     "group_id": "0",
                     "day_number": "3",
                     "subject": "Основы компьютерной графики (лаб)",
@@ -188,7 +188,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "12",
                     "lesson_number": "3",
-                    "audience": "ауд. 425",
+                    "audience": "ауд. 528",
                     "group_id": "0",
                     "day_number": "3",
                     "subject": "Математический анализ (лк)",
@@ -199,7 +199,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "13",
                     "lesson_number": "4",
-                    "audience": "ауд. 533",
+                    "audience": "ауд. 427",
                     "group_id": "0",
                     "day_number": "3",
                     "subject": "Математический анализ (пз)",
@@ -221,7 +221,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "15",
                     "lesson_number": "2",
-                    "audience": "ауд. 427",
+                    "audience": "ауд. 619",
                     "group_id": "0",
                     "day_number": "4",
                     "subject": "Основы конструирования программ (лк)",
@@ -254,7 +254,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "18",
                     "lesson_number": "4",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 615",
                     "group_id": "0",
                     "day_number": "4",
                     "subject": "Логика (лк)",
@@ -275,8 +275,19 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 },
                 {
                     "id": "20",
+                    "lesson_number": "2",
+                    "audience": "ауд. 427",
+                    "group_id": "0",
+                    "day_number": "5",
+                    "subject": "Технологии разработки программного обеспечения (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Ермоченко С.А. (доц.)",
+                    "group_name": "22ИСИТ1д"
+                },
+                {
+                    "id": "21",
                     "lesson_number": "3",
-                    "audience": "ауд. 533",
+                    "audience": "ауд. 611",
                     "group_id": "0",
                     "day_number": "5",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -285,9 +296,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "21",
+                    "id": "22",
                     "lesson_number": "3",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 528",
                     "group_id": "0",
                     "day_number": "5",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -296,7 +307,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "22",
+                    "id": "23",
                     "lesson_number": "4",
                     "audience": "ауд. 309",
                     "group_id": "0",
@@ -307,9 +318,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "23",
+                    "id": "24",
                     "lesson_number": "4",
-                    "audience": "ауд. 509a",
+                    "audience": "ауд. 307",
                     "group_id": "0",
                     "day_number": "5",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -318,9 +329,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "24",
+                    "id": "25",
                     "lesson_number": "5",
-                    "audience": "ауд. 307",
+                    "audience": "",
                     "group_id": "0",
                     "day_number": "5",
                     "subject": "Технологии разработки программного обеспечения (лаб)",
@@ -329,9 +340,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "25",
+                    "id": "26",
                     "lesson_number": "5",
-                    "audience": "ауд. 308",
+                    "audience": "",
                     "group_id": "0",
                     "day_number": "5",
                     "subject": "Технологии разработки программного обеспечения (лаб)",
@@ -340,8 +351,8 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ИСИТ1д"
                 },
                 {
-                    "id": "26",
-                    "lesson_number": "2",
+                    "id": "27",
+                    "lesson_number": "1",
                     "audience": "Декан факультета математики и информационных технологий _________________ Е.Н. Залесская",
                     "group_id": "0",
                     "day_number": "6",
@@ -349,15 +360,15 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "subgroup_id": null,
                     "teacher": "",
                     "group_name": "22ИСИТ1д"
-                }
+                },
             ]
             break;
         case 1:
             response = [
                 {
-                    "id": "27",
+                    "id": "28",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "1",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
@@ -366,9 +377,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22МИ1д"
                 },
                 {
-                    "id": "28",
+                    "id": "29",
                     "lesson_number": "2",
-                    "audience": "ауд. 113",
+                    "audience": "ауд. 412",
                     "group_id": "1",
                     "day_number": "1",
                     "subject": "Компьютерная графика и мультимедиа (лк)",
@@ -377,20 +388,20 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22МИ1д"
                 },
                 {
-                    "id": "29",
+                    "id": "30",
                     "lesson_number": "3",
-                    "audience": "ауд. 533",
+                    "audience": "ауд. 528",
                     "group_id": "1",
                     "day_number": "1",
-                    "subject": "Введение в анализ (лк)",
+                    "subject": "Линейная алгебра (лк)",
                     "subgroup_id": null,
                     "teacher": "Александрович Т.А. (ст.пр.)",
                     "group_name": "22МИ1д"
                 },
                 {
-                    "id": "30",
+                    "id": "31",
                     "lesson_number": "4",
-                    "audience": "ауд. 530",
+                    "audience": "ауд. 517",
                     "group_id": "1",
                     "day_number": "1",
                     "subject": "Введение в анализ (пз)",
@@ -399,20 +410,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22МИ1д"
                 },
                 {
-                    "id": "31",
-                    "lesson_number": "5",
-                    "audience": "ауд. 319",
-                    "group_id": "1",
-                    "day_number": "1",
-                    "subject": "Иностранный язык (пз)(фак-в)",
-                    "subgroup_id": null,
-                    "teacher": "Кажекина Л.В. (ст.пр.)",
-                    "group_name": "22МИ1д"
-                },
-                {
                     "id": "32",
                     "lesson_number": "2",
-                    "audience": "ауд. 416",
+                    "audience": "ауд. 427",
                     "group_id": "1",
                     "day_number": "2",
                     "subject": "Линейная алгебра (пз)",
@@ -456,18 +456,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "36",
                     "lesson_number": "5",
-                    "audience": "",
+                    "audience": "ауд. 303",
                     "group_id": "1",
                     "day_number": "2",
                     "subject": "Компьютерная графика и мультимедиа (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Стайнова А.А. (пр.)",
                     "group_name": "22МИ1д"
                 },
                 {
                     "id": "37",
                     "lesson_number": "2",
-                    "audience": "ауд. 213",
+                    "audience": "ауд. 534",
                     "group_id": "1",
                     "day_number": "3",
                     "subject": "Основы психологии и педагогики (пз)",
@@ -478,7 +478,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "38",
                     "lesson_number": "3",
-                    "audience": "ауд. 213",
+                    "audience": "ауд. 534",
                     "group_id": "1",
                     "day_number": "3",
                     "subject": "Основы психологии и педагогики (лк)",
@@ -489,7 +489,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "39",
                     "lesson_number": "4",
-                    "audience": "ауд. 622",
+                    "audience": "ауд. 412",
                     "group_id": "1",
                     "day_number": "3",
                     "subject": "Элементарная математика (лк)",
@@ -511,7 +511,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "41",
                     "lesson_number": "2",
-                    "audience": "ауд. 134",
+                    "audience": "ауд. 534",
                     "group_id": "1",
                     "day_number": "4",
                     "subject": "Аналитическая геометрия (лк)",
@@ -533,7 +533,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "43",
                     "lesson_number": "3",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 517",
                     "group_id": "1",
                     "day_number": "4",
                     "subject": "Иностранный язык (общее владение) (пз)",
@@ -555,7 +555,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "45",
                     "lesson_number": "4",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 216",
                     "group_id": "1",
                     "day_number": "4",
                     "subject": "Иностранный язык (общее владение) (пз)",
@@ -577,7 +577,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "47",
                     "lesson_number": "2",
-                    "audience": "ауд. 425",
+                    "audience": "ауд. 534",
                     "group_id": "1",
                     "day_number": "5",
                     "subject": "Элементарная математика (пз)",
@@ -588,7 +588,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "48",
                     "lesson_number": "3",
-                    "audience": "ауд. 517",
+                    "audience": "ауд. 128",
                     "group_id": "1",
                     "day_number": "5",
                     "subject": "Аналитическая геометрия (пз)",
@@ -615,13 +615,13 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "day_number": "5",
                     "subject": "Основы информатики (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "Стайнова А.А. (пр.)",
+                    "teacher": "Шпаков С.А. (ст.пр.)",
                     "group_name": "22МИ1д"
                 },
                 {
                     "id": "51",
                     "lesson_number": "5",
-                    "audience": "",
+                    "audience": "ауд. 303",
                     "group_id": "1",
                     "day_number": "5",
                     "subject": "Программирование в визуализированных средах (лаб)",
@@ -637,20 +637,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "day_number": "5",
                     "subject": "Программирование в визуализированных средах (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "Шпаков С.А. (ст.пр.)",
-                    "group_name": "22МИ1д"
-                },
-                {
-                    "id": "53",
-                    "lesson_number": "2",
-                    "audience": "Декан факультета математики и информационных технологий _________________ Е.Н. Залесская",
-                    "group_id": "1",
-                    "day_number": "6",
-                    "subject": "",
-                    "subgroup_id": null,
                     "teacher": "",
                     "group_name": "22МИ1д"
-                }
+                },
             ]
             break;
 
@@ -659,7 +648,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "54",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
@@ -670,7 +659,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "55",
                     "lesson_number": "2",
-                    "audience": "ауд. 526",
+                    "audience": "ауд. 534",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Дискретная математика (лк)",
@@ -681,7 +670,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "56",
                     "lesson_number": "3",
-                    "audience": "ауд. 141б",
+                    "audience": "ауд. 219",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
@@ -692,12 +681,12 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "57",
                     "lesson_number": "3",
-                    "audience": "",
+                    "audience": "ауд. 302",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Балло Ю.А. (ст.пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
@@ -714,29 +703,29 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "59",
                     "lesson_number": "4",
-                    "audience": "",
+                    "audience": "ауд. 213",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Балло Ю.А. (ст.пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
                     "id": "60",
-                    "lesson_number": "5",
-                    "audience": "ауд. 319",
+                    "lesson_number": "7",
+                    "audience": "ауд. 303",
                     "group_id": "2",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
-                    "teacher": "Кажекина Л.В. (ст.пр.)",
+                    "teacher": "Гончарова С.А. (пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
                     "id": "61",
                     "lesson_number": "2",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 526",
                     "group_id": "2",
                     "day_number": "2",
                     "subject": "Алгебра и теория чисел (лк)",
@@ -758,7 +747,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "63",
                     "lesson_number": "4",
-                    "audience": "ауд. 531",
+                    "audience": "ауд. 317",
                     "group_id": "2",
                     "day_number": "2",
                     "subject": "Алгебра и теория чисел (пз)",
@@ -785,13 +774,13 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "day_number": "2",
                     "subject": "Основы и методологии программирования (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
                     "id": "66",
                     "lesson_number": "2",
-                    "audience": "ауд. 528",
+                    "audience": "ауд. 526",
                     "group_id": "2",
                     "day_number": "3",
                     "subject": "Аналитическая геометрия (пз)",
@@ -813,7 +802,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "68",
                     "lesson_number": "4",
-                    "audience": "ауд. 412",
+                    "audience": "ауд. 119",
                     "group_id": "2",
                     "day_number": "3",
                     "subject": "Основы и методологии программирования (лк)",
@@ -835,12 +824,12 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "70",
                     "lesson_number": "2",
-                    "audience": "ауд. 119",
+                    "audience": "ауд. 142",
                     "group_id": "2",
                     "day_number": "4",
-                    "subject": "Математический анализ (лк)",
+                    "subject": "Введение в специальность (лк)",
                     "subgroup_id": null,
-                    "teacher": "Кавитова Т.В. (ст.пр.)",
+                    "teacher": "Ермоченко С.А. (доц.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
@@ -868,7 +857,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 {
                     "id": "73",
                     "lesson_number": "4",
-                    "audience": "ауд. 526",
+                    "audience": "ауд. 534",
                     "group_id": "2",
                     "day_number": "4",
                     "subject": "Дискретная математика (пз)",
@@ -895,7 +884,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "day_number": "4",
                     "subject": "Основы и методологии программирования (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
@@ -911,18 +900,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 },
                 {
                     "id": "77",
-                    "lesson_number": "2",
-                    "audience": "ауд. 526",
+                    "lesson_number": "1",
+                    "audience": "ауд. 309",
                     "group_id": "2",
                     "day_number": "5",
-                    "subject": "Математический анализ (лк)",
+                    "subject": "Курат. час",
                     "subgroup_id": null,
-                    "teacher": "Кавитова Т.В. (ст.пр.)",
+                    "teacher": "Иванова Л.В. (пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
                 {
                     "id": "78",
-                    "lesson_number": "3",
+                    "lesson_number": "2",
                     "audience": "ауд. 526",
                     "group_id": "2",
                     "day_number": "5",
@@ -933,8 +922,19 @@ export const getSchedule = (group_id) => async (dispatch) => {
                 },
                 {
                     "id": "79",
+                    "lesson_number": "3",
+                    "audience": "ауд. 526",
+                    "group_id": "2",
+                    "day_number": "5",
+                    "subject": "Математический анализ (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Кавитова Т.В. (ст.пр.)",
+                    "group_name": "22ПИ_ВЕБ1д"
+                },
+                {
+                    "id": "80",
                     "lesson_number": "4",
-                    "audience": "ауд. 528",
+                    "audience": "ауд. 413а",
                     "group_id": "2",
                     "day_number": "5",
                     "subject": "Математический анализ (пз)",
@@ -942,328 +942,295 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "teacher": "Александрович Т.А. (ст.пр.)",
                     "group_name": "22ПИ_ВЕБ1д"
                 },
-                {
-                    "id": "80",
-                    "lesson_number": "2",
-                    "audience": "Декан факультета математики и информационных технологий _________________ Е.Н. Залесская",
-                    "group_id": "2",
-                    "day_number": "6",
-                    "subject": "",
-                    "subgroup_id": null,
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
-                }
             ]
             break;
 
         case 3:
             response = [
                 {
-                    "id": "54",
+                    "id": "82",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
-                    "group_id": "2",
+                    "audience": "",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
                     "subgroup_id": null,
                     "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "55",
+                    "id": "83",
                     "lesson_number": "2",
-                    "audience": "ауд. 526",
-                    "group_id": "2",
+                    "audience": "ауд. 307",
+                    "group_id": "3",
                     "day_number": "1",
-                    "subject": "Дискретная математика (лк)",
-                    "subgroup_id": null,
-                    "teacher": "Александрович Т.А. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "subject": "Основы и методологии программирования (лаб)",
+                    "subgroup_id": "1",
+                    "teacher": "Исаченко Ю.В. (пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "56",
+                    "id": "84",
+                    "lesson_number": "2",
+                    "audience": "ауд. 308",
+                    "group_id": "3",
+                    "day_number": "1",
+                    "subject": "Основы и методологии программирования (лаб)",
+                    "subgroup_id": "2",
+                    "teacher": "Столяренко А.Ю. (пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
+                },
+                {
+                    "id": "85",
                     "lesson_number": "3",
-                    "audience": "ауд. 141б",
-                    "group_id": "2",
+                    "audience": "ауд. 302",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "1",
-                    "teacher": "Кажекина Л.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Балло Ю.А. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "57",
+                    "id": "86",
                     "lesson_number": "3",
-                    "audience": "",
-                    "group_id": "2",
+                    "audience": "ауд. 306",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "2",
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Шкатуло Н.М. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "58",
+                    "id": "87",
                     "lesson_number": "4",
-                    "audience": "ауд. 219",
-                    "group_id": "2",
+                    "audience": "ауд. 213",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "1",
-                    "teacher": "Кажекина Л.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Балло Ю.А. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "59",
+                    "id": "88",
                     "lesson_number": "4",
-                    "audience": "",
-                    "group_id": "2",
+                    "audience": "ауд. 302",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)",
                     "subgroup_id": "2",
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Шкатуло Н.М. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "60",
-                    "lesson_number": "5",
-                    "audience": "ауд. 319",
-                    "group_id": "2",
+                    "id": "89",
+                    "lesson_number": "7",
+                    "audience": "ауд. 303",
+                    "group_id": "3",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
-                    "teacher": "Кажекина Л.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Гончарова С.А. (пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "61",
+                    "id": "90",
                     "lesson_number": "2",
-                    "audience": "ауд. 534",
-                    "group_id": "2",
+                    "audience": "ауд. 526",
+                    "group_id": "3",
                     "day_number": "2",
                     "subject": "Алгебра и теория чисел (лк)",
                     "subgroup_id": null,
                     "teacher": "Мехович А.П. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "62",
+                    "id": "91",
                     "lesson_number": "3",
                     "audience": "ауд. 141",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "2",
                     "subject": "История белорусской государственности (лк)",
                     "subgroup_id": null,
                     "teacher": "Пархимович Н.Н. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "63",
+                    "id": "92",
                     "lesson_number": "4",
+                    "audience": "ауд. 526",
+                    "group_id": "3",
+                    "day_number": "2",
+                    "subject": "Аналитическая геометрия (пз)",
+                    "subgroup_id": null,
+                    "teacher": "Подоксенов М.Н. (доц.)",
+                    "group_name": "22ПИ_ПОКС1д"
+                },
+                {
+                    "id": "93",
+                    "lesson_number": "5",
                     "audience": "ауд. 531",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "2",
                     "subject": "Алгебра и теория чисел (пз)",
                     "subgroup_id": null,
                     "teacher": "Мехович А.П. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "64",
-                    "lesson_number": "5",
-                    "audience": "ауд. 307",
-                    "group_id": "2",
-                    "day_number": "2",
-                    "subject": "Основы и методологии программирования (лаб)",
-                    "subgroup_id": "1",
-                    "teacher": "Исаченко Ю.В. (пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "65",
-                    "lesson_number": "5",
-                    "audience": "ауд. 308",
-                    "group_id": "2",
-                    "day_number": "2",
-                    "subject": "Основы и методологии программирования (лаб)",
-                    "subgroup_id": "2",
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "66",
+                    "id": "94",
                     "lesson_number": "2",
-                    "audience": "ауд. 528",
-                    "group_id": "2",
-                    "day_number": "3",
-                    "subject": "Аналитическая геометрия (пз)",
-                    "subgroup_id": null,
-                    "teacher": "Подоксенов М.Н. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "67",
-                    "lesson_number": "3",
-                    "audience": "ауд. 141",
-                    "group_id": "2",
-                    "day_number": "3",
-                    "subject": "Аналитическая геометрия (лк)",
-                    "subgroup_id": null,
-                    "teacher": "Подоксенов М.Н. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "68",
-                    "lesson_number": "4",
-                    "audience": "ауд. 412",
-                    "group_id": "2",
+                    "audience": "ауд. 119",
+                    "group_id": "3",
                     "day_number": "3",
                     "subject": "Основы и методологии программирования (лк)",
                     "subgroup_id": null,
                     "teacher": "Корчевская Е.А. (доц.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "69",
+                    "id": "95",
+                    "lesson_number": "3",
+                    "audience": "ауд. 141",
+                    "group_id": "3",
+                    "day_number": "3",
+                    "subject": "Аналитическая геометрия (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Подоксенов М.Н. (доц.)",
+                    "group_name": "22ПИ_ПОКС1д"
+                },
+                {
+                    "id": "96",
+                    "lesson_number": "4",
+                    "audience": "ауд. 308",
+                    "group_id": "3",
+                    "day_number": "3",
+                    "subject": "Основы и методологии программирования (лаб)",
+                    "subgroup_id": "1",
+                    "teacher": "Исаченко Ю.В. (пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
+                },
+                {
+                    "id": "97",
+                    "lesson_number": "4",
+                    "audience": "ауд. 221",
+                    "group_id": "3",
+                    "day_number": "3",
+                    "subject": "Основы и методологии программирования (лаб)",
+                    "subgroup_id": "2",
+                    "teacher": "Столяренко А.Ю. (пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
+                },
+                {
+                    "id": "98",
                     "lesson_number": "5",
                     "audience": "ауд. спортзал",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "3",
                     "subject": "Физическая культура (пз)",
                     "subgroup_id": null,
                     "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "70",
+                    "id": "99",
                     "lesson_number": "2",
-                    "audience": "ауд. 119",
-                    "group_id": "2",
+                    "audience": "ауд. 142",
+                    "group_id": "3",
                     "day_number": "4",
-                    "subject": "Математический анализ (лк)",
+                    "subject": "Введение в специальность (лк)",
                     "subgroup_id": null,
-                    "teacher": "Кавитова Т.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Ермоченко С.А. (доц.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "71",
+                    "id": "100",
                     "lesson_number": "3",
-                    "audience": "ауд. 221",
-                    "group_id": "2",
+                    "audience": "ауд. 142",
+                    "group_id": "3",
                     "day_number": "4",
-                    "subject": "Введение в специальность (лаб)",
-                    "subgroup_id": "1",
-                    "teacher": "Исаченко Ю.В. (пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "subject": "Основы и методологии программирования (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Корчевская Е.А. (доц.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "72",
-                    "lesson_number": "3",
-                    "audience": "ауд. 321",
-                    "group_id": "2",
-                    "day_number": "4",
-                    "subject": "Введение в специальность (лаб)",
-                    "subgroup_id": "2",
-                    "teacher": "Жук Т.Д. (пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "73",
+                    "id": "101",
                     "lesson_number": "4",
                     "audience": "ауд. 526",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "4",
-                    "subject": "Дискретная математика (пз)",
+                    "subject": "Дискретная математика и математическая логика (лк)",
                     "subgroup_id": null,
-                    "teacher": "Александрович Т.А. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Караулова Т.Б. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "74",
+                    "id": "102",
                     "lesson_number": "5",
-                    "audience": "ауд. 307",
-                    "group_id": "2",
+                    "audience": "ауд. 530",
+                    "group_id": "3",
                     "day_number": "4",
-                    "subject": "Основы и методологии программирования (лаб)",
-                    "subgroup_id": "1",
-                    "teacher": "Исаченко Ю.В. (пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "subject": "Дискретная математика и математическая логика (пз)",
+                    "subgroup_id": null,
+                    "teacher": "Караулова Т.Б. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "75",
-                    "lesson_number": "5",
-                    "audience": "ауд. 308",
-                    "group_id": "2",
-                    "day_number": "4",
-                    "subject": "Основы и методологии программирования (лаб)",
-                    "subgroup_id": "2",
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
-                },
-                {
-                    "id": "76",
+                    "id": "103",
                     "lesson_number": "6",
                     "audience": "ауд. 319",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "4",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
                     "teacher": "Кажекина Л.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "77",
+                    "id": "104",
                     "lesson_number": "2",
                     "audience": "ауд. 526",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "5",
                     "subject": "Математический анализ (лк)",
                     "subgroup_id": null,
                     "teacher": "Кавитова Т.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "78",
+                    "id": "105",
                     "lesson_number": "3",
                     "audience": "ауд. 526",
-                    "group_id": "2",
+                    "group_id": "3",
                     "day_number": "5",
                     "subject": "Математический анализ (лк)",
                     "subgroup_id": null,
                     "teacher": "Кавитова Т.В. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "group_name": "22ПИ_ПОКС1д"
                 },
                 {
-                    "id": "79",
+                    "id": "106",
                     "lesson_number": "4",
-                    "audience": "ауд. 528",
-                    "group_id": "2",
+                    "audience": "ауд. 128",
+                    "group_id": "3",
                     "day_number": "5",
                     "subject": "Математический анализ (пз)",
                     "subgroup_id": null,
-                    "teacher": "Александрович Т.А. (ст.пр.)",
-                    "group_name": "22ПИ_ВЕБ1д"
+                    "teacher": "Кавитова Т.В. (ст.пр.)",
+                    "group_name": "22ПИ_ПОКС1д"
                 },
-                {
-                    "id": "80",
-                    "lesson_number": "2",
-                    "audience": "Декан факультета математики и информационных технологий _________________ Е.Н. Залесская",
-                    "group_id": "2",
-                    "day_number": "6",
-                    "subject": "",
-                    "subgroup_id": null,
-                    "teacher": "",
-                    "group_name": "22ПИ_ВЕБ1д"
-                }
             ]
             break;
 
         case 4:
             response = [
                 {
-                    "id": "107",
+                    "id": "109",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "4",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
@@ -1272,31 +1239,31 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "108",
-                    "lesson_number": "2",
-                    "audience": "ауд. 517",
-                    "group_id": "4",
-                    "day_number": "1",
-                    "subject": "Дифференциальное и интегральное исчисление (лк)",
-                    "subgroup_id": null,
-                    "teacher": "Иванова Ж.В. (доц.)",
-                    "group_name": "22ПМ1д"
-                },
-                {
-                    "id": "109",
-                    "lesson_number": "3",
-                    "audience": "ауд. 526",
-                    "group_id": "4",
-                    "day_number": "1",
-                    "subject": "Дифференциальное и интегральное исчисление (лк)",
-                    "subgroup_id": null,
-                    "teacher": "Иванова Ж.В. (доц.)",
-                    "group_name": "22ПМ1д"
-                },
-                {
                     "id": "110",
+                    "lesson_number": "2",
+                    "audience": "ауд. 530",
+                    "group_id": "4",
+                    "day_number": "1",
+                    "subject": "Дифференциальное и интегральное исчисление (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Иванова Ж.В. (доц.)",
+                    "group_name": "22ПМ1д"
+                },
+                {
+                    "id": "111",
+                    "lesson_number": "3",
+                    "audience": "ауд. 530",
+                    "group_id": "4",
+                    "day_number": "1",
+                    "subject": "Дифференциальное и интегральное исчисление (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Иванова Ж.В. (доц.)",
+                    "group_name": "22ПМ1д"
+                },
+                {
+                    "id": "112",
                     "lesson_number": "4",
-                    "audience": "ауд. 528",
+                    "audience": "ауд. 526",
                     "group_id": "4",
                     "day_number": "1",
                     "subject": "Аналитическая геометрия (пз)",
@@ -1305,8 +1272,8 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "111",
-                    "lesson_number": "5",
+                    "id": "113",
+                    "lesson_number": "7",
                     "audience": "ауд. 303",
                     "group_id": "4",
                     "day_number": "1",
@@ -1316,7 +1283,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "112",
+                    "id": "114",
                     "lesson_number": "2",
                     "audience": "ауд. 307",
                     "group_id": "4",
@@ -1327,20 +1294,20 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "113",
+                    "id": "115",
                     "lesson_number": "2",
                     "audience": "ауд. 308",
                     "group_id": "4",
                     "day_number": "2",
                     "subject": "Основы и методологии программирования (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "114",
+                    "id": "116",
                     "lesson_number": "3",
-                    "audience": "ауд. 128",
+                    "audience": "ауд. 528",
                     "group_id": "4",
                     "day_number": "2",
                     "subject": "Дифференциальное и интегральное исчисление (пз)",
@@ -1349,7 +1316,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "115",
+                    "id": "117",
                     "lesson_number": "4",
                     "audience": "ауд. 141",
                     "group_id": "4",
@@ -1360,9 +1327,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "116",
+                    "id": "118",
                     "lesson_number": "5",
-                    "audience": "ауд. 119",
+                    "audience": "ауд. 627",
                     "group_id": "4",
                     "day_number": "2",
                     "subject": "Дискретная математика (пз)",
@@ -1371,7 +1338,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "117",
+                    "id": "119",
+                    "lesson_number": "2",
+                    "audience": "ауд. 119",
+                    "group_id": "4",
+                    "day_number": "3",
+                    "subject": "Основы и методологии программирования (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Корчевская Е.А. (доц.)",
+                    "group_name": "22ПМ1д"
+                },
+                {
+                    "id": "120",
                     "lesson_number": "3",
                     "audience": "ауд. 141",
                     "group_id": "4",
@@ -1382,9 +1360,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "118",
+                    "id": "121",
                     "lesson_number": "4",
-                    "audience": "ауд. 317",
+                    "audience": "ауд. 533",
                     "group_id": "4",
                     "day_number": "3",
                     "subject": "Дифференциальное и интегральное исчисление (пз)",
@@ -1393,7 +1371,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "119",
+                    "id": "122",
                     "lesson_number": "5",
                     "audience": "ауд. спортзал",
                     "group_id": "4",
@@ -1404,7 +1382,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "120",
+                    "id": "123",
                     "lesson_number": "2",
                     "audience": "ауд. 307",
                     "group_id": "4",
@@ -1415,18 +1393,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "121",
+                    "id": "124",
                     "lesson_number": "2",
-                    "audience": "ауд. 308",
+                    "audience": "ауд. 309",
                     "group_id": "4",
                     "day_number": "4",
                     "subject": "Основы и методологии программирования (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "122",
+                    "id": "125",
                     "lesson_number": "3",
                     "audience": "ауд. 142",
                     "group_id": "4",
@@ -1437,9 +1415,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "123",
+                    "id": "126",
                     "lesson_number": "4",
-                    "audience": "ауд. 317",
+                    "audience": "ауд. 517",
                     "group_id": "4",
                     "day_number": "4",
                     "subject": "Основы высшей алгебры (лк)",
@@ -1448,7 +1426,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "124",
+                    "id": "127",
                     "lesson_number": "5",
                     "audience": "ауд. 119",
                     "group_id": "4",
@@ -1459,7 +1437,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "125",
+                    "id": "128",
                     "lesson_number": "6",
                     "audience": "ауд. 303",
                     "group_id": "4",
@@ -1470,9 +1448,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "126",
+                    "id": "129",
                     "lesson_number": "2",
-                    "audience": "ауд. 528",
+                    "audience": "ауд. 517",
                     "group_id": "4",
                     "day_number": "5",
                     "subject": "Дискретная математика (лк)",
@@ -1481,9 +1459,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "127",
+                    "id": "130",
                     "lesson_number": "3",
-                    "audience": "ауд. 531",
+                    "audience": "ауд. 416",
                     "group_id": "4",
                     "day_number": "5",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -1492,25 +1470,25 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПМ1д"
                 },
                 {
-                    "id": "128",
+                    "id": "131",
                     "lesson_number": "4",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 412",
                     "group_id": "4",
                     "day_number": "5",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
                     "teacher": "Гончарова С.А. (пр.)",
                     "group_name": "22ПМ1д"
-                }
+                },
             ]
             break;
 
         case 5:
             response = [
                 {
-                    "id": "129",
+                    "id": "132",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "5",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
@@ -1519,18 +1497,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "130",
+                    "id": "133",
                     "lesson_number": "2",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 526",
                     "group_id": "5",
                     "day_number": "1",
                     "subject": "Линейная алгебра и аналитическая геометрия (лк)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "131",
+                    "id": "134",
                     "lesson_number": "3",
                     "audience": "ауд. 307",
                     "group_id": "5",
@@ -1541,7 +1519,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "132",
+                    "id": "135",
                     "lesson_number": "3",
                     "audience": "ауд. 308",
                     "group_id": "5",
@@ -1552,9 +1530,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "133",
+                    "id": "136",
                     "lesson_number": "4",
-                    "audience": "ауд. 119",
+                    "audience": "ауд. 141",
                     "group_id": "5",
                     "day_number": "1",
                     "subject": "Основы компьютерной графики (лк)",
@@ -1563,18 +1541,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "134",
+                    "id": "137",
                     "lesson_number": "5",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 319",
                     "group_id": "5",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
-                    "teacher": "Гончарова С.А. (пр.)",
+                    "teacher": "Кажекина Л.В. (ст.пр.)",
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "135",
+                    "id": "138",
                     "lesson_number": "2",
                     "audience": "ауд. 141",
                     "group_id": "5",
@@ -1585,9 +1563,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "136",
+                    "id": "139",
                     "lesson_number": "3",
-                    "audience": "ауд. 427",
+                    "audience": "ауд. 521",
                     "group_id": "5",
                     "day_number": "2",
                     "subject": "Основы программной инженерии (лк)",
@@ -1596,7 +1574,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "137",
+                    "id": "140",
                     "lesson_number": "4",
                     "audience": "ауд. 141",
                     "group_id": "5",
@@ -1607,7 +1585,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "138",
+                    "id": "141",
                     "lesson_number": "5",
                     "audience": "ауд. 306",
                     "group_id": "5",
@@ -1618,7 +1596,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "139",
+                    "id": "142",
                     "lesson_number": "5",
                     "audience": "ауд. 333",
                     "group_id": "5",
@@ -1629,9 +1607,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "140",
+                    "id": "143",
                     "lesson_number": "2",
-                    "audience": "ауд. 534",
+                    "audience": "ауд. 530",
                     "group_id": "5",
                     "day_number": "3",
                     "subject": "Математическая логика (лк)",
@@ -1640,7 +1618,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "141",
+                    "id": "144",
                     "lesson_number": "3",
                     "audience": "ауд. 303",
                     "group_id": "5",
@@ -1651,7 +1629,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "142",
+                    "id": "145",
                     "lesson_number": "3",
                     "audience": "ауд. 308",
                     "group_id": "5",
@@ -1662,7 +1640,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "143",
+                    "id": "146",
                     "lesson_number": "4",
                     "audience": "ауд. 303",
                     "group_id": "5",
@@ -1673,9 +1651,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "144",
+                    "id": "147",
                     "lesson_number": "4",
-                    "audience": "ауд. 306",
+                    "audience": "ауд. 309",
                     "group_id": "5",
                     "day_number": "3",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -1684,7 +1662,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "145",
+                    "id": "148",
                     "lesson_number": "5",
                     "audience": "ауд. спортзал",
                     "group_id": "5",
@@ -1695,9 +1673,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "146",
+                    "id": "149",
                     "lesson_number": "2",
-                    "audience": "ауд. 530",
+                    "audience": "ауд. 528",
                     "group_id": "5",
                     "day_number": "4",
                     "subject": "Математический анализ (лк)",
@@ -1706,7 +1684,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "147",
+                    "id": "150",
                     "lesson_number": "3",
                     "audience": "ауд. 528",
                     "group_id": "5",
@@ -1717,9 +1695,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "148",
+                    "id": "151",
                     "lesson_number": "4",
-                    "audience": "ауд. 413а",
+                    "audience": "ауд. 113",
                     "group_id": "5",
                     "day_number": "4",
                     "subject": "Математический анализ (пз)",
@@ -1728,18 +1706,18 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "149",
+                    "id": "152",
                     "lesson_number": "5",
-                    "audience": "ауд. 611",
+                    "audience": "ауд. 531",
                     "group_id": "5",
                     "day_number": "4",
                     "subject": "Линейная алгебра и аналитическая геометрия (пз)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "150",
+                    "id": "153",
                     "lesson_number": "6",
                     "audience": "ауд. 303",
                     "group_id": "5",
@@ -1750,9 +1728,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "151",
+                    "id": "154",
                     "lesson_number": "2",
-                    "audience": "ауд. 200е",
+                    "audience": "ауд. 313",
                     "group_id": "5",
                     "day_number": "5",
                     "subject": "Основы компьютерной графики (лаб)",
@@ -1761,7 +1739,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "152",
+                    "id": "155",
                     "lesson_number": "2",
                     "audience": "ауд. 333",
                     "group_id": "5",
@@ -1772,9 +1750,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "153",
+                    "id": "156",
                     "lesson_number": "3",
-                    "audience": "ауд. 530",
+                    "audience": "ауд. 533",
                     "group_id": "5",
                     "day_number": "5",
                     "subject": "Дискретная математика (лк)",
@@ -1783,47 +1761,58 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22ПОИТ1д"
                 },
                 {
-                    "id": "154",
+                    "id": "157",
                     "lesson_number": "4",
-                    "audience": "ауд. 530",
+                    "audience": "ауд. 536",
                     "group_id": "5",
                     "day_number": "5",
                     "subject": "Дискретная математика (пз)",
                     "subgroup_id": null,
                     "teacher": "Караулова Т.Б. (ст.пр.)",
                     "group_name": "22ПОИТ1д"
-                }
+                },
+                {
+                    "id": "158",
+                    "lesson_number": "5",
+                    "audience": "ауд. 119",
+                    "group_id": "5",
+                    "day_number": "5",
+                    "subject": "Математический анализ (лк)",
+                    "subgroup_id": null,
+                    "teacher": "Иванова Ж.В. (доц.)",
+                    "group_name": "22ПОИТ1д"
+                },
             ]
             break;
 
         case 6:
             response = [
                 {
-                    "id": "155",
+                    "id": "159",
                     "lesson_number": "1",
-                    "audience": "ауд. спортзал",
+                    "audience": "",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Физическая культура (пз)",
                     "subgroup_id": null,
-                    "teacher": "",
+                    "teacher": "Шатуха И.Г. (ст.пр.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "156",
+                    "id": "160",
                     "lesson_number": "2",
-                    "audience": "ауд. 412",
+                    "audience": "ауд. 427",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Архитектура вычислительных систем (лк)",
                     "subgroup_id": null,
-                    "teacher": "Ермоченко С.А. (доц.)*",
+                    "teacher": "Сергеенко С.В. (ст.пр.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "157",
+                    "id": "161",
                     "lesson_number": "3",
-                    "audience": "ауд. 113",
+                    "audience": "ауд. 412",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Алгоритмизация и программирование (лк)",
@@ -1832,62 +1821,62 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "158",
+                    "id": "162",
                     "lesson_number": "4",
                     "audience": "ауд. 307",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Алгоритмизация и программирование (лаб)",
                     "subgroup_id": "1",
-                    "teacher": "",
+                    "teacher": "Столяренко А.Ю. (пр.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "159",
+                    "id": "163",
                     "lesson_number": "4",
                     "audience": "ауд. 308",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Алгоритмизация и программирование (лаб)",
                     "subgroup_id": "2",
-                    "teacher": "",
+                    "teacher": "Степанов В.А. (пр.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "160",
+                    "id": "164",
                     "lesson_number": "5",
-                    "audience": "ауд. 303",
+                    "audience": "ауд. 319",
                     "group_id": "6",
                     "day_number": "1",
                     "subject": "Иностранный язык (пз)(фак-в)",
                     "subgroup_id": null,
-                    "teacher": "Гончарова С.А. (пр.)",
+                    "teacher": "Кажекина Л.В. (ст.пр.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "161",
+                    "id": "165",
                     "lesson_number": "2",
-                    "audience": "ауд. 536",
+                    "audience": "ауд. 128",
                     "group_id": "6",
                     "day_number": "2",
                     "subject": "Высшая математика (лк)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "162",
+                    "id": "166",
                     "lesson_number": "3",
-                    "audience": "ауд. 536",
+                    "audience": "ауд. 533",
                     "group_id": "6",
                     "day_number": "2",
                     "subject": "Высшая математика (пз)",
                     "subgroup_id": null,
-                    "teacher": "Воробьёв С.Н. (доц.)",
+                    "teacher": "Шлапаков С.А. (доц.)",
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "163",
+                    "id": "167",
                     "lesson_number": "4",
                     "audience": "ауд. 141",
                     "group_id": "6",
@@ -1898,9 +1887,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "164",
+                    "id": "168",
                     "lesson_number": "2",
-                    "audience": "ауд. 425",
+                    "audience": "ауд. 200е",
                     "group_id": "6",
                     "day_number": "3",
                     "subject": "Прикладная информатика (лк)",
@@ -1909,7 +1898,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "165",
+                    "id": "169",
                     "lesson_number": "3",
                     "audience": "ауд. 308",
                     "group_id": "6",
@@ -1920,7 +1909,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "166",
+                    "id": "170",
                     "lesson_number": "3",
                     "audience": "ауд. 219",
                     "group_id": "6",
@@ -1931,9 +1920,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "167",
+                    "id": "171",
                     "lesson_number": "4",
-                    "audience": "ауд. 306",
+                    "audience": "ауд. 309",
                     "group_id": "6",
                     "day_number": "3",
                     "subject": "Иностранный язык (пз)(фак-в)",
@@ -1942,7 +1931,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "168",
+                    "id": "172",
                     "lesson_number": "4",
                     "audience": "ауд. 219",
                     "group_id": "6",
@@ -1953,7 +1942,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "169",
+                    "id": "173",
                     "lesson_number": "5",
                     "audience": "ауд. спортзал",
                     "group_id": "6",
@@ -1964,9 +1953,20 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "170",
+                    "id": "174",
+                    "lesson_number": "6",
+                    "audience": "ауд. 306",
+                    "group_id": "6",
+                    "day_number": "3",
+                    "subject": "Курат. час",
+                    "subgroup_id": null,
+                    "teacher": "Павлыш Э.В. (доц.)",
+                    "group_name": "22УИР1д"
+                },
+                {
+                    "id": "175",
                     "lesson_number": "2",
-                    "audience": "ауд. 528",
+                    "audience": "ауд. 526",
                     "group_id": "6",
                     "day_number": "4",
                     "subject": "Экономическая теория (лк)",
@@ -1975,9 +1975,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "171",
+                    "id": "176",
                     "lesson_number": "3",
-                    "audience": "ауд. 530",
+                    "audience": "ауд. 213",
                     "group_id": "6",
                     "day_number": "4",
                     "subject": "Экономическая теория (пз)",
@@ -1986,7 +1986,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "172",
+                    "id": "177",
                     "lesson_number": "4",
                     "audience": "ауд. 313",
                     "group_id": "6",
@@ -1997,7 +1997,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "173",
+                    "id": "178",
                     "lesson_number": "4",
                     "audience": "ауд. 308",
                     "group_id": "6",
@@ -2008,7 +2008,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "174",
+                    "id": "179",
                     "lesson_number": "5",
                     "audience": "",
                     "group_id": "6",
@@ -2019,7 +2019,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "175",
+                    "id": "180",
                     "lesson_number": "5",
                     "audience": "",
                     "group_id": "6",
@@ -2030,7 +2030,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "176",
+                    "id": "181",
                     "lesson_number": "6",
                     "audience": "ауд. 303",
                     "group_id": "6",
@@ -2041,7 +2041,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "177",
+                    "id": "182",
                     "lesson_number": "2",
                     "audience": "ауд. 307",
                     "group_id": "6",
@@ -2052,7 +2052,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "178",
+                    "id": "183",
                     "lesson_number": "2",
                     "audience": "ауд. 308",
                     "group_id": "6",
@@ -2063,7 +2063,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "179",
+                    "id": "184",
                     "lesson_number": "3",
                     "audience": "ауд. 319",
                     "group_id": "6",
@@ -2074,7 +2074,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "180",
+                    "id": "185",
                     "lesson_number": "3",
                     "audience": "ауд. 313",
                     "group_id": "6",
@@ -2085,7 +2085,7 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "181",
+                    "id": "186",
                     "lesson_number": "4",
                     "audience": "ауд. 200е",
                     "group_id": "6",
@@ -2096,9 +2096,9 @@ export const getSchedule = (group_id) => async (dispatch) => {
                     "group_name": "22УИР1д"
                 },
                 {
-                    "id": "182",
+                    "id": "187",
                     "lesson_number": "5",
-                    "audience": "ауд. 615",
+                    "audience": "ауд. 627",
                     "group_id": "6",
                     "day_number": "5",
                     "subject": "Белорусский язык (профессиональная лексика) (пз)",

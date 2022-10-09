@@ -9,3 +9,13 @@ function getSchedule($group_id, $connect){
     }
     echo json_encode($daysList);
 }
+
+function getAll($connect){
+    $schedule = mysqli_query($connect, "SELECT * FROM `schedule`");
+    $daysList = [];
+    while($day = mysqli_fetch_assoc($schedule))
+    {
+        $daysList[] = $day;
+    }
+    echo json_encode($daysList);
+}

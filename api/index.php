@@ -17,6 +17,9 @@ if(isset($params['group_id'])){
     getSchedule($params['group_id'], $connect);
 }
 
+if(isset($params['all'])){
+    getAll($connect);
+}
 
 
 
