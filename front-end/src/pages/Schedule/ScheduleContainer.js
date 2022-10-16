@@ -63,6 +63,7 @@ class ScheduleContainer extends React.Component{
             <div>
                  <div className={s.animationContainer}>
                 <DateComponent/>
+                <div className="group_name">Обновлено 16.10.2022</div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>

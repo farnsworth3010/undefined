@@ -129,7 +129,7 @@ def xlsToMysql():
     groups = ["22ИСИТ1д", "22МИ1д", "22ПИ_ВЕБ1д", "22ПИ_ПОКС1д", "22ПМ1д", "22ПОИТ1д", "22УИР1д", "22ФИЗ1д"]
     firstLetters = ["D", "F", "H", "J", "L", "N", "P", "R"]
     secondLetters = [ "E", "G", "I", "K", "M", "O", "Q", "S"]
-    for i in range(0, 7):
+    for i in range(0, 8):
         checkDay(monday, "Понедельник", "1", i,groups[i], firstLetters[i], secondLetters[i])
         checkDay(tuesday, "Вторник", "2", i,groups[i],  firstLetters[i], secondLetters[i])
         checkDay(wednesday, "Среда", "3", i, groups[i], firstLetters[i], secondLetters[i])
