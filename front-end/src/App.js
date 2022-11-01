@@ -11,7 +11,6 @@ class App extends React.Component{
     this.props.initializeApp();
   }
   render(){
-    
 		return (
 			<div className={`${"app-wrapper"}`}>
         <main>

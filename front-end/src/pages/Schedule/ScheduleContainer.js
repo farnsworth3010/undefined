@@ -63,7 +63,7 @@ class ScheduleContainer extends React.Component{
             <div>
                  <div className={s.animationContainer}>
                 <DateComponent/>
-                <div className="group_name">🎃 Обновлено 30.10.2022 🎃</div>
+                <div className="group_name">🔧 Обновлено 02.11.2022 🔧</div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>
@@ -72,7 +72,7 @@ class ScheduleContainer extends React.Component{
                     <div className={s.alarmAndTodayContainer}>
                         <Alarms/>
                         <div>
-                            {(date.getHours() > 17 || date.getHours() < 5) ? <><h1>Расписание на завтра:</h1> 
+                            {(date.getHours() > 17) ? <><h1>Расписание на завтра:</h1> 
                             {tomorrow_block}</>
                             : <> <h1>Расписание на сегодня:</h1>
                             {today_block}</>

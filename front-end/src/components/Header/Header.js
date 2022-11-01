@@ -12,8 +12,8 @@ const Header = (props) => {
             {props.location.pathname != "/undefined" && props.location.pathname != "/undefined/" ? <BackBtn resetGroup={props.resetGroup} className={s.back}/> : null}
 
             <DarkToggle className={s.themeToggle} />
-            <Link to={'/undefined'} onClick={()=>{props.resetGroup()}}>
-                <h1 className={s.project_name}>[object Undefined]</h1>
+            <Link className={s.linkContainer} to={'/undefined'} onClick={()=>{props.resetGroup()}}>
+                <h1 className={s.project_name}>VSUschedule</h1>
                 </Link>
         </nav>
     )

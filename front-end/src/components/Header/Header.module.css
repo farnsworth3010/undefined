@@ -12,6 +12,7 @@
   
 
 .themeToggle{
+    cursor: pointer;
     position: absolute;
     right: 0;
     top: 50%;
@@ -27,4 +28,9 @@
 
 .nav{
     position: relative;
+}
+.linkContainer{
+    margin: 0 auto;
+    display: block;
+    width: fit-content
 }
