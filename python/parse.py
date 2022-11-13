@@ -6,6 +6,7 @@ import openpyxl
 import sys
 import urllib3
 import os
+import sys
 urllib3.disable_warnings()
 
 class colors: # Цвета
@@ -37,12 +38,13 @@ def downloadXls(url):
     xlsToMysql()
 
 
-def xlsToMysql():
+def xlsToMysql(filename = "table.xls"):
+    print(filename)
     connect = mysql.connector.connect(host="localhost", user="root", password="Rostik3015", database="stdtest") # Подключение к базе данных
     cursor = connect.cursor()
-    os.system("libreoffice --convert-to xlsx table.xls --headless")
+    os.system("libreoffice --convert-to xlsx "+filename+" --headless")
     print(colors.OKGREEN+"Table converted from xls to xlsx..."+colors.ENDC) 
-    wb = openpyxl.load_workbook("table.xlsx") # Открываем таблицу
+    wb = openpyxl.load_workbook(filename+"x") # Открываем таблицу
     sheet = wb.active # Открываем лист
     cursor.execute("""TRUNCATE schedule""") # Стираем базу данных :)
     def checkDay(start, dayname, day_number, group_id, group_name, firstLetter, secondLetter):
@@ -144,22 +146,26 @@ def downloadHtml():
     except:
         print(colors.FAIL+"Parse failed, check link"+colors.ENDC)
         sys.exit()
-    try:
-        savedlink = open("savedlink.txt").read() # Проверяем сохранена ли ссылка на прошлое
-        print(colors.WARNING+"Old link was found..."+colors.ENDC)
-        print(colors.WARNING+"Trying to compare..."+colors.ENDC)
-        if(savedlink == link): # Сравниваем прошлое расписание с полученным
-            print(colors.OKGREEN+"Schedule is up to date :)!"+colors.ENDC)
-            return 0
-        else:
-            open("savedlink.txt", 'w').write(link)
-            print(colors.WARNING+"starting update..."+colors.ENDC)
-            downloadXls(link)
-    except:
-        open("savedlink.txt", 'w').write(link)
-        print(colors.WARNING+"starting update..."+colors.ENDC)
+    # try:
+    #     savedlink = open("savedlink.txt").read() # Проверяем сохранена ли ссылка на прошлое
+    #     print(colors.WARNING+"Old link was found..."+colors.ENDC)
+    #     print(colors.WARNING+"Trying to compare..."+colors.ENDC)
+    #     if(savedlink == link): # Сравниваем прошлое расписание с полученным
+    #         print(colors.OKGREEN+"Schedule is up to date :)!"+colors.ENDC)
+    #         return 0
+    #     else:
+    #         open("savedlink.txt", 'w').write(link)
+    #         print(colors.WARNING+"starting update..."+colors.ENDC)
+    #         downloadXls(link)
+    # except:
+    #     open("savedlink.txt", 'w').write(link)
+    #     print(colors.WARNING+"starting update..."+colors.ENDC)
     downloadXls(link)
 
-while(True):
-    downloadHtml()
-    time.sleep(3600)
+
+if(sys.argv[1]):
+    xlsToMysql(sys.argv[1])
+else:
+    while(True):
+        downloadHtml()
+        time.sleep(3600)
