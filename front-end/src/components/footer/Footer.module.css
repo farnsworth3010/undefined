@@ -5,6 +5,6 @@
     transform: translateX(-50%);
     bottom: 15px;
 }
-body[class="dark"] .footer{
+body[class~="dark"] .footer{
     color: #fff;
 }

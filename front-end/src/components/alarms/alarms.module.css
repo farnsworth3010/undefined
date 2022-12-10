@@ -9,6 +9,8 @@
     box-sizing: border-box;
     background-color: #fff;
     padding-top: 5px;
+    position: relative;
+    z-index: 1;
 }
 body[class~="dark"] .alarmblock{
     background: #1C1C1E;

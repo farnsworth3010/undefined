@@ -5,14 +5,16 @@
     margin: 15px;
     box-sizing: border-box;
     background-color: #fff;
+    position: relative;
+    z-index: 1;
 }
 body[class~="dark"] .dayblock{
     background: #1C1C1E;
-    color: #fff;
+    color: #fff !important;
 
 }
 body[class="dark"] h2{
-    color: #fff;
+    color: #fff !important;
 
 }
 

@@ -58,9 +58,16 @@ def xlsToMysql(filename = "table.xls"):
             audienceFirstGroup = ""
             audienceSecondGroup = ""
             audienceOfBothGroups = ""
-
-            if(getCellVal(sheet, firstLetter, startpos) != None): # Название предмета (1 строка)
-                subjectName = getCellVal(sheet, firstLetter, startpos) 
+            subjectFirstGroup = ""
+            subjectSecondGroup = ""
+            if(getCellVal(sheet, firstLetter, startpos) != getCellVal(sheet, secondLetter, startpos)):   
+                if(getCellVal(sheet, firstLetter, startpos) != None):
+                    subjectFirstGroup = getCellVal(sheet, firstLetter, startpos) # Первая подгруппа
+                if(getCellVal(sheet, secondLetter, startpos) != None):
+                    subjectSecondGroup = getCellVal(sheet, secondLetter, startpos) # Вторая подгруппа
+            else:
+               if(getCellVal(sheet, firstLetter, startpos) != None):
+                    subjectName = getCellVal(sheet, firstLetter, startpos)
 
             pos = startpos + 1 # Преподаватель (2 строка)
             if(getCellVal(sheet, firstLetter, pos) != getCellVal(sheet, secondLetter, pos)): # Две группы
@@ -85,8 +92,12 @@ def xlsToMysql(filename = "table.xls"):
             if(teacherFirstGroup or teacherSecondGroup or audienceFirstGroup or audienceSecondGroup): # Проверяем деление на группы
                 try:
                     print(f"[{days[int(day_number)-1]} {subjectName} 1:{str(audienceSecondGroup)} 2:{str(audienceSecondGroup)} 1:{teacherFirstGroup} 2:{teacherSecondGroup}]")
-                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""', '"""+group_name+"""');""")
-                    cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""', '"""+group_name+"""');""")
+                    if(subjectFirstGroup or subjectSecondGroup):
+                        cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectFirstGroup+"""', '1', '"""+teacherFirstGroup+"""', '"""+group_name+"""');""")
+                        cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectSecondGroup+"""', '2', '"""+teacherSecondGroup+"""', '"""+group_name+"""');""")
+                    else:
+                        cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceFirstGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '1', '"""+teacherFirstGroup+"""', '"""+group_name+"""');""")
+                        cursor.execute("""INSERT INTO `schedule` (id, lesson_number, audience, group_id, day_number, subject, subgroup_id, teacher, group_name) VALUES (NULL, '"""+str(i)+"""', '"""+str(audienceSecondGroup)+"""', '"""+str(group_id)+"""', '"""+str(day_number)+"""', '"""+subjectName+"""', '2', '"""+teacherSecondGroup+"""', '"""+group_name+"""');""")
                     connect.commit()
                 except mysql.connector.Error as err:
                     print("Something went wrong: {}".format(err))

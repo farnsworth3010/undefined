@@ -84,16 +84,13 @@ body[class~="dark"] .group_name{
   margin-bottom: 15px;
 }
 
-body h1, h2, h3, h4, h5, h6{
-  color: #000;
-}
 
-body[class="dark"] h2{
+body[class~="dark"] h2{
   color: #fff;
 
 }
 
-body[class="dark"] h1{
+body[class~="dark"] h1{
   color: #fff;
 
 }
