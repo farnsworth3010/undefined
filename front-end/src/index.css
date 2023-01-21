@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.snowflakes_gid_1 .snowflake__inner_type_0:before {
+  background-image: none !important;
+  content: "сессия...";
+  width: 0;
+  color: #5ECDEF
+}
+ .snowflakes_gid_1 .snowflake__inner_type_1:before {
+  background-image: none !important;
+  content: "сессия...";
+  width: 0;
+  color: #855eef }
+ .snowflakes_gid_1 .snowflake__inner_type_2:before {
+  background-image: none !important;
+  content: "автомат...";
+  width: 0;
+  color: #5ECDEF }
+ .snowflakes_gid_1 .snowflake__inner_type_3:before {
+  background-image: none !important;
+  content: "халява...";
+  width: 0;
+  color: #5eef74 }
+ .snowflakes_gid_1 .snowflake__inner_type_4:before {
+  background-image: none !important;
+  content: "экзамены...";
+  width: 0;
+  color: #ef5e5e }
+ .snowflakes_gid_1 .snowflake__inner_type_5:before {
+  background-image: none !important;
+  content: "зачёты...";
+  width: 0;
+  color: #efe05e }
+ 
+#snowflakes-container{
+    height: 110vh !important;
+    top: -50px !important;
+  }

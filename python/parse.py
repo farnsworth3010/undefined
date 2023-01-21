@@ -40,7 +40,7 @@ def downloadXls(url):
 
 def xlsToMysql(filename = "table.xls"):
     print(filename)
-    connect = mysql.connector.connect(host="localhost", user="root", password="Rostik3015", database="stdtest") # Подключение к базе данных
+    connect = mysql.connector.connect(host="localhost", user="schedule", password="schedule", database="schedule") # Подключение к базе данных
     cursor = connect.cursor()
     os.system("libreoffice --convert-to xlsx "+filename+" --headless")
     print(colors.OKGREEN+"Table converted from xls to xlsx..."+colors.ENDC) 
@@ -50,7 +50,7 @@ def xlsToMysql(filename = "table.xls"):
     def checkDay(start, dayname, day_number, group_id, group_name, firstLetter, secondLetter):
         startpos = start
         days = ['Понедельник', "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
-        for i in range(1, 8):  # Проверяем 8 пар
+        for i in range(1, 9):  # Проверяем 8 пар
             subjectName = ""
             teacherFirstGroup = ""
             teacherSecondGroup = ""
