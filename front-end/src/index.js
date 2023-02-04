@@ -11,7 +11,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 import GroupSelection from './pages/GroupSelection/GroupSelection';
 
 import Snowflakes from 'magic-snowflakes';
-const snowflakes = new Snowflakes({ color: "#5ECDEF", container: document.querySelector("#snowflakes-container"), count: 25, minOpacity: .1, maxOpacity: .95, minSize: 10, maxSize: 25, rotation: true, speed: 1, wind: false, zIndex: 0 });
+const snowflakes = new Snowflakes({ color: "#5ECDEF", container: document.querySelector("#snowflakes-container"), count: 25, minOpacity: .1, maxOpacity: .95, minSize: 10, maxSize: 25, rotation: false, speed: 1, wind: false, zIndex: 0 });
 
 snowflakes.start();
 

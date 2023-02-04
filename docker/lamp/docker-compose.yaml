@@ -16,6 +16,8 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     volumes:
       - mysql-data:/var/lib/mysql
+    ports:
+      - "33060:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.0.1

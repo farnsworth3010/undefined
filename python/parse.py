@@ -40,7 +40,7 @@ def downloadXls(url):
 
 def xlsToMysql(filename = "table.xls"):
     print(filename)
-    connect = mysql.connector.connect(host="localhost", user="schedule", password="schedule", database="schedule") # Подключение к базе данных
+    connect = mysql.connector.connect(host="localhost", port="33060", user="schedule", password="schedule", database="schedule", auth_plugin='mysql_native_password') # Подключение к базе данных
     cursor = connect.cursor()
     os.system("libreoffice --convert-to xlsx "+filename+" --headless")
     print(colors.OKGREEN+"Table converted from xls to xlsx..."+colors.ENDC) 
@@ -174,7 +174,7 @@ def downloadHtml():
     downloadXls(link)
 
 
-if(sys.argv[1]):
+if(len(sys.argv) > 1):
     xlsToMysql(sys.argv[1])
 else:
     while(True):

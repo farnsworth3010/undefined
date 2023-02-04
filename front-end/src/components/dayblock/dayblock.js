@@ -11,17 +11,17 @@ const dayblock = (props) => {
                         if(j.subgroup_id != null){
                             if(j.subgroup_id == 1){
                                 isfirstgroup = true
-                                day.push(<li key={j.id} className={`${isfirstgroup ? s.firstGroup : ""}`}>{i}. <b>{j.subject}</b><br/> Группа: {j.subgroup_id}<br/>{j.teacher}<span>{j.audience}</span></li>)
+                                day.push(<li key={j.id} className={`${isfirstgroup ? s.firstGroup : ""}`}>{i}. <b style={j.subject.indexOf("(пз)") > -1 || j.subject.indexOf("(куср)") > -1 ? {color: "#fc7268"} : {}}>{j.subject}</b><br/> Группа: {j.subgroup_id}<br/>{j.teacher}<span>{j.audience}</span></li>)
                                 added = true
                             }
                             else if(j.subgroup_id == 2){
-                                day.push(<li key={j.id}><b>{j.subject}</b><br/> Группа: {j.subgroup_id}<br/>{j.teacher}<span>{j.audience}</span></li>)
+                                day.push(<li key={j.id}>&nbsp;&nbsp;<b style={j.subject.indexOf("(пз)") > -1 || j.subject.indexOf("(куср)") > -1 ? {color: "#fc7268"} : {}}>{j.subject}</b><br/> Группа: {j.subgroup_id}<br/>{j.teacher}<span>{j.audience}</span></li>)
                                 added = true
                             }
 
                         }
                         else{
-                            day.push(<li key={j.id}>{i}. <b>{j.subject}</b><br/>{j.teacher}<span>{j.audience}</span></li>)
+                            day.push(<li key={j.id}>{i}. <b style={j.subject.indexOf("(пз)") > -1 || j.subject.indexOf("(куср)") > -1 ? {color: "#fc7268"} : {}}>{j.subject}</b><br/>{j.teacher}<span>{j.audience}</span></li>)
                             added = true
                         }
                     }

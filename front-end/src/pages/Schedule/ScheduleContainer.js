@@ -8,6 +8,7 @@ import Preloader from '../../components/preloader/preloader'
 import {resetGroup} from '../../redux/schedule-reducer'
 import DateComponent from "../../components/date/DateComponent";
 import s from "./scheduleContainer.module.css"
+import dikaprio from "./5b35147f91127.jpg"
 class ScheduleContainer extends React.Component{
     componentDidMount(){
         if(this.props.group_id){
@@ -64,9 +65,10 @@ class ScheduleContainer extends React.Component{
                  <div className={s.animationContainer}>
                 <DateComponent/>
                 <div className="group_name">
-                <span style={{color: 'yellow'}}>⚠УЧЕБНАЯ ТРЕВОГА⚠</span><br/>СЕССИЯ!!! {`:(`}
+                <span style={{color: 'orange'}}>Поздравляем со сдачей сессии! :)</span>
+                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999"}} src={dikaprio} alt=""/>
                     <br/>
-                    🎄 Обновлено 18.12.2022 🎄</div>
+                    🗿 Обновлено 04.02.2023 🗿</div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>

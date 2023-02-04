@@ -14,35 +14,35 @@ code {
 
 .snowflakes_gid_1 .snowflake__inner_type_0:before {
   background-image: none !important;
-  content: "сессия...";
+  content: "1";
   width: 0;
-  color: #5ECDEF
+  color: #1c9357
 }
  .snowflakes_gid_1 .snowflake__inner_type_1:before {
   background-image: none !important;
-  content: "сессия...";
+  content: "0";
   width: 0;
-  color: #855eef }
+  color: #20732a }
  .snowflakes_gid_1 .snowflake__inner_type_2:before {
   background-image: none !important;
-  content: "автомат...";
+  content: "0";
   width: 0;
-  color: #5ECDEF }
+  color: #78e883 }
  .snowflakes_gid_1 .snowflake__inner_type_3:before {
   background-image: none !important;
-  content: "халява...";
+  content: "1";
   width: 0;
   color: #5eef74 }
  .snowflakes_gid_1 .snowflake__inner_type_4:before {
   background-image: none !important;
-  content: "экзамены...";
+  content: "0";
   width: 0;
-  color: #ef5e5e }
+  color: #2b6c31 }
  .snowflakes_gid_1 .snowflake__inner_type_5:before {
   background-image: none !important;
-  content: "зачёты...";
+  content: "1";
   width: 0;
-  color: #efe05e }
+  color: #186745 }
  
 #snowflakes-container{
     height: 110vh !important;
