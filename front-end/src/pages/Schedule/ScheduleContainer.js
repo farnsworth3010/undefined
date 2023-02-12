@@ -68,7 +68,7 @@ class ScheduleContainer extends React.Component{
                 <span style={{color: 'orange'}}>Поздравляем со сдачей сессии! :)</span>
                 <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999"}} src={dikaprio} alt=""/>
                     <br/>
-                    🗿 Обновлено 04.02.2023 🗿</div>
+                    🗿 Обновлено 12.02.2023 🗿</div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>
