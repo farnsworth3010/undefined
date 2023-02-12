@@ -1,0 +1,12 @@
+#faculty
+0 himbio
+1 fmiit
+2 ped
+3 spip
+4 fgyak
+5 fiz
+6 ur
+7 ingr
+8 perepodg
+#course
+1, 2, 3, 4, 5
