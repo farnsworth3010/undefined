@@ -65,10 +65,10 @@ class ScheduleContainer extends React.Component{
                  <div className={s.animationContainer}>
                 <DateComponent/>
                 <div className="group_name">
-                <span style={{color: 'orange'}}>Поздравляем со сдачей сессии! :)</span>
-                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999"}} src={dikaprio} alt=""/>
+                <span style={{color: 'orange'}}>пикча недели:</span>
+                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999", position: "relative"}} src={dikaprio} alt=""/>
                     <br/>
-                    🗿 Обновлено 12.02.2023 🗿</div>
+                    🏋️ Обновлено 26.02.2023 🏋️</div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>

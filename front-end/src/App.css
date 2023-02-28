@@ -78,6 +78,8 @@ body[class~="dark"] .group_name{
 }
 .group_name{
   text-align: center;
+  position: relative;
+  z-index: 999;
 }
 
 .today-block{
