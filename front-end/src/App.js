@@ -5,6 +5,7 @@ import { initializeApp } from './redux/app-reducer';
 import { Outlet } from 'react-router';
 import Footer from './components/footer/Footer'
 import Header from './components/Header/Header';
+import Dockbar from './components/dockbar/dockbar';
 
 class App extends React.Component{
   componentDidMount(){
@@ -16,6 +17,7 @@ class App extends React.Component{
         <main>
           <Header/>
           <Outlet/>
+          <Dockbar/>
         </main>
         <Footer/>
 			</div>

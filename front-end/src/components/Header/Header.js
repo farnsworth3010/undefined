@@ -9,10 +9,10 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
     return(
         <nav className={s.nav}>
-            {props.location.pathname != "/undefined" && props.location.pathname != "/undefined/" ? <BackBtn resetGroup={props.resetGroup} className={s.back}/> : null}
+            {props.location.pathname != "/VSUschedule" && props.location.pathname != "/VSUschedule/" ? <BackBtn resetGroup={props.resetGroup} className={s.back}/> : null}
 
             <DarkToggle className={s.themeToggle} />
-            <Link className={s.linkContainer} to={'/undefined'} onClick={()=>{props.resetGroup()}}>
+            <Link className={s.linkContainer} to={'/VSUschedule'} onClick={()=>{props.resetGroup()}}>
                 <h1 className={s.project_name}>VSUschedule</h1>
                 </Link>
         </nav>

@@ -10,23 +10,23 @@ import ScheduleContainer from './pages/Schedule/ScheduleContainer';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import GroupSelection from './pages/GroupSelection/GroupSelection';
 
-import Snowflakes from 'magic-snowflakes';
-const snowflakes = new Snowflakes({ color: "#5ECDEF", container: document.querySelector("#snowflakes-container"), count: 25, minOpacity: .1, maxOpacity: .95, minSize: 10, maxSize: 25, rotation: false, speed: 1, wind: false, zIndex: 0 });
+// import Snowflakes from 'magic-snowflakes';
+// const snowflakes = new Snowflakes({ color: "#5ECDEF", container: document.querySelector("#snowflakes-container"), count: 25, minOpacity: .1, maxOpacity: .95, minSize: 10, maxSize: 25, rotation: false, speed: 1, wind: false, zIndex: 0 });
 
-snowflakes.start();
+// snowflakes.start();
 
 const router = createBrowserRouter([
   {
-    path: "/undefined",
+    path: "/VSUschedule",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/undefined/schedule/:groupId",
+        path: "/VSUschedule/schedule/:groupId",
         element: <ScheduleContainer />
       },
       {
-        path: "/undefined",
+        path: "/VSUschedule",
         element: <GroupSelection />
       },
     ]

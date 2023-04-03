@@ -1,9 +1,13 @@
 {
   "name": "VSUschedule",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
-  "homepage": "https://farnsworth3010.github.io/undefined/",
+  "homepage": "https://codebreakers.site/VSUschedule/",
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

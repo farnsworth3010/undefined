@@ -1,6 +1,6 @@
 import React from "react"
 import Dayblock from "../../components/dayblock/dayblock"
-import { getSchedule } from "../../redux/schedule-reducer";
+import { getSchedule, getLastCheck } from "../../redux/schedule-reducer";
 import { connect } from "react-redux";
 import withRouter from '../../components/withRouter/withRouter'
 import Alarms from '../../components/alarms/alarms'
@@ -8,9 +8,9 @@ import Preloader from '../../components/preloader/preloader'
 import {resetGroup} from '../../redux/schedule-reducer'
 import DateComponent from "../../components/date/DateComponent";
 import s from "./scheduleContainer.module.css"
-import dikaprio from "./5b35147f91127.jpg"
 class ScheduleContainer extends React.Component{
     componentDidMount(){
+        this.props.getLastCheck()
         if(this.props.group_id){
             this.props.getSchedule(this.props.group_id)
         }
@@ -66,9 +66,12 @@ class ScheduleContainer extends React.Component{
                 <DateComponent/>
                 <div className="group_name">
                 <span style={{color: 'orange'}}>пикча недели:</span>
-                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999", position: "relative"}} src={dikaprio} alt=""/>
+                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999", position: "relative"}} src={"http://codebreakers.site/picoftheday.png"} alt=""/>
                     <br/>
-                    🏋️ Обновлено 26.02.2023 🏋️</div>
+                    🪄 Обновлено: {this.props.upd} 🪄
+                    <br/>
+                    Проверено: {this.props.lastCheck}
+                    </div>
 
                 <div className="group_name">{this.props.group_name}</div>
                 </div>
@@ -102,6 +105,8 @@ const mapStateToProps = (state) => ({
 	schedule: state.schedule.schedule,
     group_id: state.schedule.group_id,
     isFetching: state.schedule.isFetching,
-    group_name: state.schedule.group_name
+    group_name: state.schedule.group_name,
+    upd: state.schedule.upd,
+    lastCheck: state.schedule.lastCheck
 });
-export default withRouter(connect(mapStateToProps, { getSchedule, resetGroup })(ScheduleContainer));
+export default withRouter(connect(mapStateToProps, { getSchedule, resetGroup, getLastCheck })(ScheduleContainer));

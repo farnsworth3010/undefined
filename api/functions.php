@@ -8,6 +8,11 @@
         }
         echo json_encode($daysList);
     }
+    function getLastCheck() {
+        $lastcheck = mysqli_query($connect, "SELECT * FROM `check`");
+        test = mysqli_fetch_assoc($lastcheck))
+        echo json_encode($lastcheck);
+    }
     function getAll($connect){
         for($i = 0; $i < 8; $i++){
             $group_id = strval($i);

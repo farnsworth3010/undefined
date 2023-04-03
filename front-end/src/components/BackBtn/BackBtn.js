@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const BackBtn = (props) => {
     return(
-        <Link onClick={props.resetGroup} to={"/undefined/"}><img  src={back} className={`${s.btn} ${props.className}`} width="30px"></img></Link>
+        <Link onClick={props.resetGroup} to={"/VSUschedule/"}><img  src={back} className={`${s.btn} ${props.className}`} width="30px"></img></Link>
     )
 }
 
