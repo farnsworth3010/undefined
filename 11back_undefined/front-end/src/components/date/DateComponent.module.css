@@ -1,0 +1,8 @@
+.date{
+    text-align: center;
+}
+
+body[class~="dark"] .date{
+    color: #fff;
+}
+

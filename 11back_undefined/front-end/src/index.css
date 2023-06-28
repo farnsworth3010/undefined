@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.snowflakes_gid_1 .snowflake__inner_type_0:before {
+  background-image: none !important;
+  content: "Аберто";
+  width: 0;
+  color: #1c9357
+}
+ .snowflakes_gid_1 .snowflake__inner_type_1:before {
+  background-image: none !important;
+  content: "Авада Кедавра";
+  width: 0;
+  color: #20732a }
+ .snowflakes_gid_1 .snowflake__inner_type_2:before {
+  background-image: none !important;
+  content: "Агуаменти";
+  width: 0;
+  color: #78e883 }
+ .snowflakes_gid_1 .snowflake__inner_type_3:before {
+  background-image: none !important;
+  content: "Арресто моментум ";
+  width: 0;
+  color: #5eef74 }
+ .snowflakes_gid_1 .snowflake__inner_type_4:before {
+  background-image: none !important;
+  content: "Вингардиум Левиоса";
+  width: 0;
+  color: #2b6c31 }
+ .snowflakes_gid_1 .snowflake__inner_type_5:before {
+  background-image: none !important;
+  content: "Репаро";
+  width: 0;
+  color: #186745 }
+ 
+#snowflakes-container{
+    height: 110vh !important;
+    top: -50px !important;
+  }

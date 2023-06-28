@@ -1,0 +1,43 @@
+.scheduleContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+}
+.alarmAndTodayContainer{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+.alarmAndTodayContainer h1{
+    position: relative;
+    z-index: 999;
+}
+
+
+
+@media screen and (max-width: 1200px){
+    .scheduleContainer{
+        display: block;
+    }
+    .alarmAndTodayContainer{
+        display: block;
+    }    
+}
+
+.animationContainer{
+    animation: scheduleAnimation 0.5s ease-in-out;
+}
+
+@keyframes scheduleAnimation {
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    50%{
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

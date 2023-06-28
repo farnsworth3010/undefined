@@ -1,0 +1,61 @@
+.dayblock{
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.15);
+    margin: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+body[class~="dark"] .dayblock{
+    background: #1C1C1E;
+    color: #fff !important;
+
+}
+body[class="dark"] h2{
+    color: #fff !important;
+
+}
+
+.weekend h2{
+    background-image: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.dayblock ul{
+    list-style: none;
+}
+
+.dayblock h1{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.dayblock ul li{
+    border-bottom: 1px solid #ccc;   
+    margin: 15px 0px;
+    padding-bottom: 15px;
+}
+.dayblock ul li span{
+    display: block;
+}
+
+.firstGroup{
+    border-bottom: none !important;
+}
+.dayblock ul li:last-child{
+    border-bottom: none;   
+    padding-bottom: 0px;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1200px){
+    .dayblock{
+        margin: 15px auto;
+    }
+}
