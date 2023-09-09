@@ -1,1 +1,1 @@
-# STD
+# My smart schedule for students
