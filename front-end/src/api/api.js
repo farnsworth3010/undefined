@@ -1,7 +1,7 @@
 import * as axios from 'axios';
 
-const instance = axios.create({baseURL: "http://codebreakers.site/VSUscheduleAPI/index.php"})
-const lastcheck = axios.create({baseURL: "http://codebreakers.site/VSUschedule/"})
+const instance = axios.create({baseURL: "http://79.133.181.113:8585/api.php"})
+const lastcheck = axios.create({baseURL: "http://79.133.181.113:8585/"})
 
 export const api = {
     schedule: {

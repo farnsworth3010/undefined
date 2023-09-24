@@ -2,7 +2,7 @@
   "name": "VSUschedule",
   "version": "1.0",
   "private": true,
-  "homepage": "https://codebreakers.site/VSUschedule/",
+  "homepage": "https://schedule.codebreakers.site/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

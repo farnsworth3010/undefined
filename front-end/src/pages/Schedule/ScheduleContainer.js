@@ -65,12 +65,12 @@ class ScheduleContainer extends React.Component{
                  <div className={s.animationContainer}>
                 <DateComponent/>
                 <div className="group_name">
-                <span style={{color: 'orange'}}>пикча недели:</span>
-                <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999", position: "relative"}} src={"http://codebreakers.site/picoftheday.png"} alt=""/>
+                {/* <span style={{color: 'orange'}}>пикча недели:</span> */}
+                {/* <img style={{display: 'block', margin: "10px auto", width: "200px", zIndex: "999", position: "relative"}} src={"http://codebreakers.site/picoftheday.png"} alt=""/> */}
                     <br/>
                     🪄 Обновлено: {this.props.upd} 🪄
                     <br/>
-                    Проверено: {this.props.lastCheck}
+                    {/* Проверено: {this.props.lastCheck} */}
                     </div>
 
                 <div className="group_name">{this.props.group_name}</div>
