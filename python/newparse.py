@@ -10,7 +10,7 @@ import sys
 import datetime
 import json
 urllib3.disable_warnings()
-connect = mysql.connector.connect(host="localhost", port="3306", user="schedule_test", password="ejoUge@5ui%ft2", database="schedule_test", auth_plugin='mysql_native_password') # Подключение к базе данных
+connect = mysql.connector.connect(host="localhost", port="33060", user="schedule_test", password="ejoUge@5ui%ft2", database="schedule_test", auth_plugin='mysql_native_password') # Подключение к базе данных
 cursor = connect.cursor()
 class colors: # Цвета
     HEADER = '\033[95m'
@@ -169,7 +169,7 @@ def xlsToMysql(filename, course, faculty):
 def downloadHtml():
     testjson = {'lastcheck': checkDate()}
     jsonString = json.dumps(testjson, indent=4)
-    open('/var/www/codebreakers/VSUschedule/test.json', 'w', encoding='utf-8').write(jsonString) # Запись страницы в файл
+    open('./test.json', 'w', encoding='utf-8').write(jsonString) # Запись страницы в файл
     now = datetime.datetime.now()
     print(logTime()+colors.WARNING+"Trying to download HTML page..."+colors.ENDC)
     url = "http://vsu.by/universitet/fakultety/matematiki-i-it/raspisanie.html"
